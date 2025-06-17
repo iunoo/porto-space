@@ -38,28 +38,27 @@ export const EntryLoader = () => {
           transition={{ duration: 0.3 }}
           className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden flex items-center justify-center"
         >
-          {/* Blackhole Video Container */}
-          <motion.div
-            initial={{ y: 0 }}
-            animate={{ 
-              y: showText ? 0 : "var(--blackhole-final-top)"
-            }}
-            transition={{ 
-              duration: showText ? 0 : 1.0,
-              ease: "easeInOut"
-            }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <video
+          {/* Blackhole Video Container - Same structure as hero */}
+          <div className="relative flex flex-col h-full w-full">
+            <motion.video
               autoPlay
               muted
               loop
               playsInline
-              className="rotate-180 absolute top-0 left-0 w-full h-full object-cover"
+              initial={{ y: 0 }}
+              animate={{ 
+                y: showText ? 0 : "var(--blackhole-final-top)"
+              }}
+              transition={{ 
+                duration: showText ? 0 : 1.0,
+                ease: "easeInOut"
+              }}
+              className="rotate-180 absolute left-0 w-full h-full object-cover -z-20"
+              style={{ top: showText ? "0px" : "var(--blackhole-final-top)" }}
             >
               <source src="/videos/blackhole.webm" type="video/webm" />
-            </video>
-          </motion.div>
+            </motion.video>
+          </div>
 
           {/* Entry Text */}
           <AnimatePresence>

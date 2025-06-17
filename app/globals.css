@@ -7,8 +7,8 @@
 
 /* Shared Blackhole Position Variables */
 :root {
-  --blackhole-final-top: -360px; /* Raised by 10px for perfect alignment */
-  --blackhole-alignment-offset: 360px; /* Updated to match */
+  --blackhole-final-top: -370px; /* Adjusted by -10px for perfect alignment */
+  --blackhole-alignment-offset: 370px; /* Updated to match */
 }
 
 .cursive {
@@ -152,7 +152,7 @@
 
 @keyframes entry-glitch-after {
   0%, 100% {
-    clip: rect(0, 900px, 0, 0);
+  clip: rect(0, 900px, 0, 0);
     transform: translate(0);
   }
   25% {
