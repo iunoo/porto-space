@@ -33,7 +33,9 @@ export const SkillText = () => {
         variants={slideInFromRight(0.5)}
         className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
       >
-        Never miss a task, deadline or idea.
+        <span className="glitch" data-text="AI-powered planning for your daily mission.">
+          AI-powered planning for your daily mission.
+        </span>
       </motion.div>
     </div>
   );

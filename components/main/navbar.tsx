@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
+import { NAV_LINKS, SOCIALS } from "@/constants";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,37 +19,30 @@ export const Navbar = () => {
         >
           <Image
             src="/logo.png"
-            alt="Logo"
+            alt="Syah Bandi Logo"
             width={70}
             height={70}
             draggable={false}
             className="cursor-pointer"
           />
-          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">Rakit Aplikasi</div>
+          <div className="hidden md:flex md:self font-bold ml-[10px] text-gray-300">
+            Syah Bandi – Fullstack Software Engineer
+          </div>
         </Link>
 
         {/* Web Navbar */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
+        <div className="hidden md:flex w-[400px] h-full flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
                 className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+                title={`Navigate to ${link.title}`}
               >
                 {link.title}
               </Link>
             ))}
-
-            {/* Source Code */}
-            <Link
-              href={LINKS.sourceCode}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
-            >
-              Source Code
-            </Link>
           </div>
         </div>
 
@@ -61,8 +54,9 @@ export const Navbar = () => {
               target="_blank"
               rel="noreferrer noopener"
               key={name}
+              title={`Visit ${name}`}
             >
-              <Icon className="h-6 w-6 text-white" />
+              <Icon className="h-6 w-6 text-white hover:text-[rgb(112,66,248)] transition" />
             </Link>
           ))}
         </div>
@@ -71,6 +65,7 @@ export const Navbar = () => {
         <button
           className="md:hidden text-white focus:outline-none text-4xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
         >
           ☰
         </button>
@@ -91,15 +86,6 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-            <Link
-              href={LINKS.sourceCode}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Source Code
-            </Link>
           </div>
 
           {/* Social Icons */}
@@ -110,8 +96,9 @@ export const Navbar = () => {
                 target="_blank"
                 rel="noreferrer noopener"
                 key={name}
+                title={`Visit ${name}`}
               >
-                <Icon className="h-8 w-8 text-white" />
+                <Icon className="h-8 w-8 text-white hover:text-[rgb(112,66,248)] transition" />
               </Link>
             ))}
           </div>

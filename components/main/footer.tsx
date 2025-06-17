@@ -19,7 +19,8 @@ export const Footer = () => {
                   href={link}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="flex flex-row items-center my-[15px]"
+                  className="flex flex-row items-center my-[15px] hover:text-[rgb(112,66,248)] transition"
+                  title={`Visit ${name}`}
                 >
                   {Icon && <Icon />}
                   <span className="text-[15px] ml-[6px]">{name}</span>
@@ -30,7 +31,7 @@ export const Footer = () => {
         </div>
 
         <div className="mb-[20px] text-[15px] text-center">
-          &copy; Rakit Aplikasi {new Date().getFullYear()} Inc. All rights reserved.
+          &copy; iuno.in {new Date().getFullYear()}. All rights reserved.
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ export const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Portofolio Fullstack Developer
+            Fullstack Developer Portfolio
           </h1>
         </motion.div>
 
@@ -33,11 +33,11 @@ export const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Memberikan{" "}
+            Delivering{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              pengalaman proyek
+              high-impact software
             </span>{" "}
-            terbaik.
+            solutions.
           </span>
         </motion.div>
 
@@ -45,16 +45,17 @@ export const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Saya adalah Software Engineer Full Stack dengan pengalaman dalam
-          pengembangan Website, Mobile, dan Software. Lihat proyek dan
-          keahlian saya.
+          Hi, I'm Syah Bandi – a Fullstack Software Engineer with hands-on 
+          experience in web, mobile, and system development. Explore my 
+          projects and technical expertise.
         </motion.p>
 
         <motion.a
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          href="#projects"
         >
-          Pelajari lebih lanjut
+          Explore more
         </motion.a>
       </div>
 
@@ -64,7 +65,7 @@ export const HeroContent = () => {
       >
         <Image
           src="/hero-bg.svg"
-          alt="ikon kerja"
+          alt="work icon"
           height={650}
           width={650}
           draggable={false}

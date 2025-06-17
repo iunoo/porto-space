@@ -92,17 +92,22 @@ export const SOCIALS = [
   {
     name: "Instagram",
     icon: RxInstagramLogo,
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/iuno.in",
   },
   {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: "https://facebook.com",
+    name: "YouTube",
+    icon: FaYoutube,
+    link: "https://www.youtube.com/@iunoin",
   },
   {
-    name: "Twitter",
-    icon: RxTwitterLogo,
-    link: "https://twitter.com",
+    name: "GitHub",
+    icon: RxGithubLogo,
+    link: "https://github.com/iunoo",
+  },
+  {
+    name: "Discord",
+    icon: RxDiscordLogo,
+    link: "https://discord.com/iuno.in",
   },
 ] as const;
 
@@ -261,23 +266,23 @@ export const PROJECTS = [
   {
     title: "Modern Next.js 14 Portfolio",
     description:
-      'Jelajahi perjalanan evolusi profesional saya melalui Modern Next.js Portfolio.',
+      'Explore the evolution of my professional journey through this Modern Next.js Portfolio.',
     image: "/projects/project-1.png",
-    link: "https://example.com",
+    link: "https://iuno.in",
   },
   {
     title: "Interactive Cards Portfolio",
     description:
-      'Masuki dunia penuh warna dari perjalanan profesional saya melalui Interactive Cards Portfolio.',
+      'Step into the colorful world of my professional journey through this Interactive Cards Portfolio.',
     image: "/projects/project-2.png",
-    link: "https://example.com",
+    link: "https://iuno.in",
   },
   {
     title: "Space Themed Website",
     description:
-      'Mulailah perjalanan antar bintang dengan "Space Themed Website" saya, sebuah situs bertema luar angkasa yang mempesona.',
+      'Embark on an interstellar journey with my "Space Themed Website", a captivating space-themed site.',
     image: "/projects/project-3.png",
-    link: "https://example.com",
+    link: "https://iuno.in",
   },
 ] as const;
 
@@ -288,17 +293,17 @@ export const FOOTER_DATA = [
       {
         name: "YouTube",
         icon: FaYoutube,
-        link: "https://youtube.com",
+        link: "https://www.youtube.com/@iunoin",
       },
       {
         name: "GitHub",
         icon: RxGithubLogo,
-        link: "https://github.com",
+        link: "https://github.com/iunoo",
       },
       {
         name: "Discord",
         icon: RxDiscordLogo,
-        link: "https://discord.com",
+        link: "https://discord.com/iuno.in",
       },
     ],
   },
@@ -308,17 +313,12 @@ export const FOOTER_DATA = [
       {
         name: "Instagram",
         icon: RxInstagramLogo,
-        link: "https://instagram.com",
+        link: "https://www.instagram.com/iuno.in",
       },
       {
-        name: "Twitter",
-        icon: RxTwitterLogo,
-        link: "https://twitter.com",
-      },
-      {
-        name: "Linkedin",
+        name: "LinkedIn",
         icon: RxLinkedinLogo,
-        link: "https://linkedin.com",
+        link: "https://linkedin.com/in/syahbandi",
       },
     ],
   },
@@ -328,17 +328,17 @@ export const FOOTER_DATA = [
       {
         name: "Become Sponsor",
         icon: null,
-        link: "https://youtube.com",
+        link: "https://www.youtube.com/@iunoin",
       },
       {
         name: "Learning about me",
         icon: null,
-        link: "https://example.com",
+        link: "https://iuno.in",
       },
       {
         name: "Contact Me",
         icon: null,
-        link: "mailto:contact@example.com",
+        link: "mailto:contact@iuno.in",
       },
     ],
   },
@@ -360,5 +360,5 @@ export const NAV_LINKS = [
 ] as const;
 
 export const LINKS = {
-  sourceCode: "https://drive.google.com/drive/folders/13iRdFGYHEI-0Mk8fNTjt_9ckjCvbeAew?usp=drive_link",
+  portfolio: "https://iuno.in",
 };
