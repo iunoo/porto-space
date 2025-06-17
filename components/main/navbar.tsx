@@ -11,27 +11,29 @@ export const Navbar = () => {
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
       {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
+      <div className="w-full h-full flex items-center m-auto px-[10px]">
         {/* Logo + Name */}
-        <Link
-          href="#about-me"
-          className="flex items-center"
-        >
-          <Image
-            src="/logo.png"
-            alt="Syahbandi Logo"
-            width={70}
-            height={70}
-            draggable={false}
-            className="cursor-pointer"
-          />
-          <div className="hidden md:flex md:self font-bold ml-[10px] text-gray-300">
-            Syahbandi – AI-Powered Systems Builder
-          </div>
-        </Link>
+        <div className="flex items-center flex-1">
+          <Link
+            href="#about-me"
+            className="flex items-center"
+          >
+            <Image
+              src="/logo.png"
+              alt="Syahbandi Logo"
+              width={70}
+              height={70}
+              draggable={false}
+              className="cursor-pointer"
+            />
+            <div className="hidden md:flex md:self font-bold ml-[10px] text-gray-300">
+              Syahbandi – AI-Powered Systems Builder
+            </div>
+          </Link>
+        </div>
 
-        {/* Web Navbar - Centered */}
-        <div className="hidden md:flex flex-1 justify-center">
+        {/* Web Navbar - Perfectly Centered */}
+        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
           <div className="flex items-center justify-center gap-8 h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] px-[30px] py-[10px] rounded-full text-gray-200">
             {NAV_LINKS.map((link) => (
               <Link
@@ -47,7 +49,7 @@ export const Navbar = () => {
         </div>
 
         {/* Social Icons (Web) - Only GitHub */}
-        <div className="hidden md:flex flex-row gap-5">
+        <div className="hidden md:flex flex-row gap-5 flex-1 justify-end">
           {SOCIALS.map(({ link, name, icon: Icon }) => (
             <Link
               href={link ?? ''}
