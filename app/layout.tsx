@@ -4,7 +4,7 @@ import type { PropsWithChildren } from "react";
 
 import { Footer } from "@/components/main/footer";
 import { Navbar } from "@/components/main/navbar";
-import { Preloader } from "@/components/main/preloader";
+import { EntryLoader } from "@/components/main/entry-loader";
 import { StarsCanvas } from "@/components/main/star-background";
 import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           inter.className
         )}
       >
-        <Preloader />
+        <EntryLoader />
         <StarsCanvas />
         <Navbar />
         {children}

@@ -65,7 +65,7 @@
 .glitch {
   position: relative;
   display: inline-block;
-  animation: glitch-skew 1s infinite linear alternate-reverse;
+  animation: glitch-skew 2s infinite linear alternate-reverse;
 }
 
 .glitch::before,
@@ -79,86 +79,87 @@
 }
 
 .glitch::before {
-  animation: glitch-anim 0.5s infinite linear alternate-reverse;
+  animation: glitch-anim 0.8s infinite linear alternate-reverse;
   color: #ff00c1;
   z-index: -1;
 }
 
 .glitch::after {
-  animation: glitch-anim2 1s infinite linear alternate-reverse;
+  animation: glitch-anim2 1.2s infinite linear alternate-reverse;
   color: #00fff9;
   z-index: -2;
 }
 
-/* Preloader Glitch Text */
-.glitch-text {
-  position: relative;
-  display: inline-block;
+/* Entry Loader Glitch Animation */
+.entry-loader .glitch {
+  animation: entry-glitch-skew 1s ease-in-out;
 }
 
-.glitch-text .glitch {
-  animation: preloader-glitch 1s ease-in-out;
+.entry-loader .glitch::before {
+  animation: entry-glitch-before 1s ease-in-out;
 }
 
-.glitch-text .glitch::before {
-  animation: preloader-glitch-before 1s ease-in-out;
+.entry-loader .glitch::after {
+  animation: entry-glitch-after 1s ease-in-out;
 }
 
-.glitch-text .glitch::after {
-  animation: preloader-glitch-after 1s ease-in-out;
-}
-
-@keyframes preloader-glitch {
+@keyframes entry-glitch-skew {
   0%, 100% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(-0.5deg);
+  }
+  40% {
+    transform: skew(0.3deg);
+  }
+  60% {
+    transform: skew(-0.2deg);
+  }
+  80% {
+    transform: skew(0.4deg);
+  }
+}
+
+@keyframes entry-glitch-before {
+  0%, 100% {
+    clip: rect(0, 900px, 0, 0);
     transform: translate(0);
   }
   20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-}
-
-@keyframes preloader-glitch-before {
-  0%, 100% {
-    clip: rect(0, 900px, 0, 0);
-  }
-  20% {
     clip: rect(10px, 900px, 20px, 0);
+    transform: translate(-1px, 1px);
   }
   40% {
     clip: rect(30px, 900px, 40px, 0);
+    transform: translate(1px, -1px);
   }
   60% {
     clip: rect(50px, 900px, 60px, 0);
+    transform: translate(-1px, -1px);
   }
   80% {
     clip: rect(70px, 900px, 80px, 0);
+    transform: translate(1px, 1px);
   }
 }
 
-@keyframes preloader-glitch-after {
+@keyframes entry-glitch-after {
   0%, 100% {
     clip: rect(0, 900px, 0, 0);
+    transform: translate(0);
   }
-  20% {
+  25% {
     clip: rect(15px, 900px, 25px, 0);
+    transform: translate(1px, -1px);
   }
-  40% {
+  50% {
     clip: rect(35px, 900px, 45px, 0);
+    transform: translate(-1px, 1px);
   }
-  60% {
+  75% {
     clip: rect(55px, 900px, 65px, 0);
-  }
-  80% {
-    clip: rect(75px, 900px, 85px, 0);
+    transform: translate(1px, 1px);
   }
 }
 
