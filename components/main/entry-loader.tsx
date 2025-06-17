@@ -38,7 +38,7 @@ export const EntryLoader = () => {
           transition={{ duration: 0.3 }}
           className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden flex items-center justify-center"
         >
-          {/* Blackhole Video Container - Using shared positioning class */}
+          {/* Blackhole Video Container */}
           <div className="relative flex flex-col h-full w-full">
             <motion.video
               autoPlay
@@ -47,15 +47,15 @@ export const EntryLoader = () => {
               playsInline
               initial={{ y: 0 }}
               animate={{ 
-                y: showText ? 0 : "var(--blackhole-final-top)"
+                y: showText ? 0 : "calc(var(--blackhole-final-top) + 10px)"
               }}
               transition={{ 
                 duration: showText ? 0 : 1.0,
                 ease: "easeInOut"
               }}
-              className="rotate-180 absolute left-0 w-full h-full object-cover -z-20 final-blackhole-position"
+              className="rotate-180 absolute left-0 w-full h-full object-cover -z-20"
               style={{ 
-                top: showText ? "0px" : "var(--blackhole-final-top)"
+                top: "0px"
               }}
             >
               <source src="/videos/blackhole.webm" type="video/webm" />
