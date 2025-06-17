@@ -47,7 +47,7 @@ export const EntryLoader = () => {
               playsInline
               initial={{ y: 0 }}
               animate={{ 
-                y: showText ? 0 : "calc(var(--blackhole-final-top) + 10px)"
+                y: showText ? 0 : "var(--blackhole-final-top)" }}
               }}
               transition={{ 
                 duration: showText ? 0 : 1.0,
