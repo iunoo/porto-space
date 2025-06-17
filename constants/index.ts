@@ -90,24 +90,9 @@ export const SKILL_DATA = [
 
 export const SOCIALS = [
   {
-    name: "Instagram",
-    icon: RxInstagramLogo,
-    link: "https://www.instagram.com/iuno.in",
-  },
-  {
-    name: "YouTube",
-    icon: FaYoutube,
-    link: "https://www.youtube.com/@iunoin",
-  },
-  {
     name: "GitHub",
     icon: RxGithubLogo,
     link: "https://github.com/iunoo",
-  },
-  {
-    name: "Discord",
-    icon: RxDiscordLogo,
-    link: "https://discord.com/iuno.in",
   },
 ] as const;
 
@@ -264,23 +249,26 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    title: "KeuBot CashFlow V5 Pro",
     description:
-      'Explore the evolution of my professional journey through this Modern Next.js Portfolio.',
+      'An AI-powered personal finance tracker with automation, categorized transactions, and PDF reports.',
+    tags: ["n8n", "GPT-4", "Google Sheets", "Finance AI"],
     image: "/projects/project-1.png",
     link: "https://iuno.in",
   },
   {
-    title: "Interactive Cards Portfolio",
+    title: "AI Task Command Processor",
     description:
-      'Step into the colorful world of my professional journey through this Interactive Cards Portfolio.',
+      'Turns natural language into action flows using GPT and automation logic.',
+    tags: ["GPT", "Workflow Agent", "JSON", "No-code"],
     image: "/projects/project-2.png",
     link: "https://iuno.in",
   },
   {
-    title: "Space Themed Website",
+    title: "Finance Insight Generator",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a captivating space-themed site.',
+      'Auto-generates daily/weekly charts and PDF reviews using QuickChart and smart filters.',
+    tags: ["QuickChart", "PDF", "n8n", "Analytics AI"],
     image: "/projects/project-3.png",
     link: "https://iuno.in",
   },

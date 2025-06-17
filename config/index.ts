@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 
 export const siteConfig: Metadata = {
-  title: "Syah Bandi – Fullstack Developer Portfolio",
-  description: "Explore the work of Syah Bandi, a passionate Fullstack Engineer building innovative apps using modern web, mobile, and cloud technologies.",
+  title: "Syahbandi – Fullstack Developer Portfolio",
+  description: "Explore the work of Syahbandi, a passionate Fullstack Engineer building innovative apps using modern web, mobile, and cloud technologies.",
   keywords: [
-    "syah bandi",
+    "syahbandi",
+    "iuno.in",
     "fullstack developer",
+    "AI-powered systems",
     "software engineer",
     "reactjs",
     "nextjs",
@@ -29,7 +31,7 @@ export const siteConfig: Metadata = {
     "css",
   ] as Array<string>,
   authors: {
-    name: "Syah Bandi",
+    name: "Syahbandi",
     url: "https://iuno.in",
   },
 } as const;

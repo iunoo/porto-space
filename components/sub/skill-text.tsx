@@ -31,7 +31,7 @@ export const SkillText = () => {
 
       <motion.div
         variants={slideInFromRight(0.5)}
-        className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
+        className="glitch-font text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
       >
         <span className="glitch" data-text="AI-powered planning for your daily mission.">
           AI-powered planning for your daily mission.

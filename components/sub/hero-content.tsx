@@ -3,6 +3,7 @@
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   slideInFromLeft,
@@ -24,7 +25,7 @@ export const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
+            AI-Powered Systems Builder
           </h1>
         </motion.div>
 
@@ -33,11 +34,12 @@ export const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Delivering{" "}
+            Delivering impactful<br />
+            systems and workflows<br />
+            with{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              high-impact software
-            </span>{" "}
-            solutions.
+              AI
+            </span>.
           </span>
         </motion.div>
 
@@ -45,18 +47,18 @@ export const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Hi, I'm Syah Bandi – a Fullstack Software Engineer with hands-on 
-          experience in web, mobile, and system development. Explore my 
-          projects and technical expertise.
+          Hi, I'm Syahbandi — a systems builder who codes, but builds faster and smarter by collaborating with AI. 
+          I combine programming, automation, and intelligent workflows to turn ideas into scalable, real-world products.
         </motion.p>
 
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-          href="#projects"
-        >
-          Explore more
-        </motion.a>
+        <motion.div variants={slideInFromLeft(1)}>
+          <Link
+            href="#projects"
+            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] block"
+          >
+            Explore more
+          </Link>
+        </motion.div>
       </div>
 
       <motion.div

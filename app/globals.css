@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono:wght@400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +8,12 @@
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }
+
+.glitch-font {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+}
+
 .Welcome-text {
   background: linear-gradient(
       0deg,

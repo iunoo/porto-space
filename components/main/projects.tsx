@@ -8,7 +8,7 @@ export const Projects = () => {
       className="flex flex-col items-center justify-center py-20"
     >
       <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
-        Selected Works by Syah Bandi
+        Selected Works by Syahbandi
       </h1>
       <p className="text-gray-400 text-lg mb-10 text-center max-w-2xl">
         Explore a curated collection of apps, tools, and smart solutions I've built.
@@ -20,6 +20,7 @@ export const Projects = () => {
             src={project.image}
             title={project.title}
             description={project.description}
+            tags={project.tags}
             link={project.link}
           />
         ))}
