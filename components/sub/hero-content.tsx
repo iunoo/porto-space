@@ -16,10 +16,10 @@ export const HeroContent = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Extended delay: 1.2s loader + 0.3s additional delay for smooth transition
+    // Extended delay: 1.8s total loader time + 0.3s additional delay
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 1500);
+    }, 2100);
 
     return () => clearTimeout(timer);
   }, []);

@@ -16,11 +16,11 @@ export const EntryLoader = () => {
       setShowText(false);
     }, 800);
 
-    // Hide entire loader after 1.2 seconds
+    // Hide entire loader after 1.8 seconds (1s animation + 0.8s buffer)
     const loaderTimer = setTimeout(() => {
       setIsVisible(false);
       document.body.classList.remove('preloader-active');
-    }, 1200);
+    }, 1800);
 
     return () => {
       clearTimeout(textTimer);
@@ -29,7 +29,7 @@ export const EntryLoader = () => {
     };
   }, []);
 
-  // Custom easing curve for gravitational pull effect
+  // Custom easing curve for gravitational pull with overshoot
   const gravitationalEasing = [0.25, 0.46, 0.45, 0.94];
 
   return (
@@ -44,11 +44,14 @@ export const EntryLoader = () => {
           {/* Blackhole Video Container */}
           <motion.div
             initial={{ y: 0 }}
-            animate={{ y: showText ? 0 : -365 }}
+            animate={{ 
+              y: showText ? 0 : [-365, -368, -365] // Overshoot by 3px then settle
+            }}
             transition={{ 
-              duration: 0.6, 
+              duration: showText ? 0 : 1.0, // Extended to 1 second
               delay: showText ? 0 : 0.1,
-              ease: gravitationalEasing
+              ease: gravitationalEasing,
+              times: showText ? undefined : [0, 0.85, 1] // Overshoot at 85%, settle by 100%
             }}
             className="absolute inset-0 w-full h-full"
           >
@@ -66,11 +69,14 @@ export const EntryLoader = () => {
           {/* Stars Background */}
           <motion.div
             initial={{ y: 0 }}
-            animate={{ y: showText ? 0 : -365 }}
+            animate={{ 
+              y: showText ? 0 : [-365, -368, -365] // Same overshoot pattern
+            }}
             transition={{ 
-              duration: 0.6, 
+              duration: showText ? 0 : 1.0, // Extended to 1 second
               delay: showText ? 0 : 0.1,
-              ease: gravitationalEasing
+              ease: gravitationalEasing,
+              times: showText ? undefined : [0, 0.85, 1] // Synchronized overshoot
             }}
             className="absolute inset-0 w-full h-full"
           >
