@@ -36,7 +36,7 @@ export const Navbar = () => {
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
-                href={link.link}
+                href={link.link ?? ''}
                 className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
                 title={`Navigate to ${link.title}`}
               >
@@ -50,7 +50,7 @@ export const Navbar = () => {
         <div className="hidden md:flex flex-row gap-5">
           {SOCIALS.map(({ link, name, icon: Icon }) => (
             <Link
-              href={link}
+              href={link ?? ''}
               target="_blank"
               rel="noreferrer noopener"
               key={name}
@@ -79,7 +79,7 @@ export const Navbar = () => {
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
-                href={link.link}
+                href={link.link ?? ''}
                 className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -92,7 +92,7 @@ export const Navbar = () => {
           <div className="flex justify-center gap-6 mt-6">
             {SOCIALS.map(({ link, name, icon: Icon }) => (
               <Link
-                href={link}
+                href={link ?? ''}
                 target="_blank"
                 rel="noreferrer noopener"
                 key={name}

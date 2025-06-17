@@ -16,7 +16,7 @@ export const Footer = () => {
               {column.data.map(({ icon: Icon, name, link }) => (
                 <Link
                   key={`${column.title}-${name}`}
-                  href={link}
+                  href={link ?? ''}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="flex flex-row items-center my-[15px] hover:text-[rgb(112,66,248)] transition"
