@@ -1,5 +1,5 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,8 +8,22 @@ import { NAV_LINKS, SOCIALS } from "@/constants";
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-4 md:px-10">
       {/* Navbar Container */}
       <div className="w-full h-full flex items-center m-auto px-[10px]">
         {/* Logo + Name */}
@@ -24,7 +38,7 @@ export const Navbar = () => {
               width={70}
               height={70}
               draggable={false}
-              className="cursor-pointer"
+              className="cursor-pointer w-[50px] h-[50px] md:w-[70px] md:h-[70px]"
             />
             <div className="hidden md:flex md:self font-bold ml-[10px] text-gray-300 relative">
               <span className="nav-glitch-hover" data-text="Syahbandi – AI-Powered Systems Builder">
@@ -68,24 +82,24 @@ export const Navbar = () => {
 
         {/* Hamburger Menu */}
         <button
-          className="md:hidden text-white focus:outline-none text-4xl"
+          className={`md:hidden text-white focus:outline-none text-3xl hamburger ${isMobileMenuOpen ? 'open' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
-          ☰
+          {isMobileMenuOpen ? '✕' : '☰'}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
+        <div className={`absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden mobile-menu-enter`}>
           {/* Links */}
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center w-full">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link ?? ''}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
+                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center w-full mobile-nav-link"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}
@@ -94,7 +108,7 @@ export const Navbar = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex justify-center gap-6 mt-6">
+          <div className="flex justify-center mobile-social-icons">
             {SOCIALS.map(({ link, name, icon: Icon }) => (
               <Link
                 href={link ?? ''}

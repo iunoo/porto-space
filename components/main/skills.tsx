@@ -14,11 +14,12 @@ export const Skills = () => {
     <section
       id="skills"
       style={{ transform: "scale(0.9)" }}
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-10 md:py-20 mobile-section-padding mobile-section-spacing"
     >
       <SkillText />
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      {/* Main Skills - Mobile: 3 columns, Desktop: flex-wrap */}
+      <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center">
         {SKILL_DATA.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
@@ -31,7 +32,8 @@ export const Skills = () => {
         ))}
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      {/* Frontend Skills */}
+      <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center">
         {FRONTEND_SKILL.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
@@ -43,7 +45,9 @@ export const Skills = () => {
           />
         ))}
       </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+
+      {/* Backend Skills */}
+      <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center">
         {BACKEND_SKILL.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
@@ -55,7 +59,9 @@ export const Skills = () => {
           />
         ))}
       </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+
+      {/* Fullstack Skills */}
+      <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center">
         {FULLSTACK_SKILL.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
@@ -67,7 +73,9 @@ export const Skills = () => {
           />
         ))}
       </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+
+      {/* Other Skills */}
+      <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center">
         {OTHER_SKILL.map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}

@@ -286,6 +286,46 @@
   }
 }
 
+/* Mobile Menu Animations */
+.mobile-menu-enter {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.mobile-menu-exit {
+  animation: slideUp 0.3s ease-in forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Hamburger to X Animation */
+.hamburger {
+  transition: transform 0.3s ease;
+}
+
+.hamburger.open {
+  transform: rotate(45deg);
+}
+
 /* Enhanced Main Glitch Animations */
 @keyframes glitch-anim {
   0% {
@@ -514,4 +554,110 @@ html {
 /* Disable scrolling during preloader */
 body.preloader-active {
   overflow: hidden;
+}
+
+/* Mobile-specific styles (under 768px only) */
+@media (max-width: 767px) {
+  /* Global mobile padding */
+  .mobile-section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero section mobile adjustments */
+  .hero-mobile-text {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-mobile-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  /* Skills section mobile grid */
+  .skills-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    margin-top: 1.5rem;
+  }
+
+  /* Mobile glitch text improvements */
+  .mobile-glitch-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+  }
+
+  /* Mobile project cards */
+  .mobile-project-card {
+    margin-bottom: 2rem;
+  }
+
+  /* Mobile navbar improvements */
+  .mobile-nav-link {
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(112, 66, 248, 0.2);
+  }
+
+  .mobile-nav-link:last-child {
+    border-bottom: none;
+  }
+
+  /* Mobile social icons */
+  .mobile-social-icons {
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(112, 66, 248, 0.2);
+  }
+
+  /* Mobile blackhole scaling */
+  .mobile-blackhole-scale {
+    transform: scale(0.8);
+  }
+
+  /* Mobile section spacing */
+  .mobile-section-spacing {
+    margin-bottom: 3rem;
+  }
+
+  /* Mobile welcome box */
+  .mobile-welcome-box {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Mobile button */
+  .mobile-button {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Mobile tooltip */
+  .mobile-tooltip {
+    width: 90vw;
+    max-width: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+  }
+
+  /* Mobile skill icons with tap feedback */
+  .mobile-skill-icon {
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .mobile-skill-icon:active {
+    transform: scale(0.95);
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(112, 66, 248, 0.5));
+  }
 }
