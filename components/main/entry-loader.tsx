@@ -29,6 +29,9 @@ export const EntryLoader = () => {
     };
   }, []);
 
+  // Custom easing curve for gravitational pull effect
+  const gravitationalEasing = [0.25, 0.46, 0.45, 0.94];
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -43,9 +46,9 @@ export const EntryLoader = () => {
             initial={{ y: 0 }}
             animate={{ y: showText ? 0 : -365 }}
             transition={{ 
-              duration: 0.5, 
+              duration: 0.6, 
               delay: showText ? 0 : 0.1,
-              ease: "easeInOut"
+              ease: gravitationalEasing
             }}
             className="absolute inset-0 w-full h-full"
           >
@@ -65,9 +68,9 @@ export const EntryLoader = () => {
             initial={{ y: 0 }}
             animate={{ y: showText ? 0 : -365 }}
             transition={{ 
-              duration: 0.5, 
+              duration: 0.6, 
               delay: showText ? 0 : 0.1,
-              ease: "easeInOut"
+              ease: gravitationalEasing
             }}
             className="absolute inset-0 w-full h-full"
           >
@@ -82,7 +85,11 @@ export const EntryLoader = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
+                exit={{ 
+                  opacity: 0, 
+                  y: -20,
+                  transition: { duration: 0.4, ease: "easeOut" }
+                }}
                 transition={{ duration: 0.3 }}
                 className="absolute bottom-0 left-0 right-0 pb-20 z-10 flex items-center justify-center"
               >
