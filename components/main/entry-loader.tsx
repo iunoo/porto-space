@@ -36,12 +36,12 @@ export const EntryLoader = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden flex items-center justify-center"
         >
           {/* Blackhole Video Container */}
           <motion.div
             initial={{ y: 0 }}
-            animate={{ y: showText ? 0 : -340 }}
+            animate={{ y: showText ? 0 : -360 }}
             transition={{ 
               duration: 0.4, 
               delay: showText ? 0 : 0.1,
@@ -63,7 +63,7 @@ export const EntryLoader = () => {
           {/* Stars Background */}
           <motion.div
             initial={{ y: 0 }}
-            animate={{ y: showText ? 0 : -340 }}
+            animate={{ y: showText ? 0 : -360 }}
             transition={{ 
               duration: 0.4, 
               delay: showText ? 0 : 0.1,
@@ -76,7 +76,7 @@ export const EntryLoader = () => {
             </div>
           </motion.div>
 
-          {/* Entry Text */}
+          {/* Entry Text - Perfectly Centered Under Blackhole */}
           <AnimatePresence>
             {showText && (
               <motion.div
@@ -84,9 +84,9 @@ export const EntryLoader = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10"
+                className="absolute bottom-0 left-0 right-0 pb-20 z-10 flex items-center justify-center"
               >
-                <div className="text-2xl md:text-3xl font-medium text-white glitch-font text-center">
+                <div className="text-2xl md:text-3xl font-medium text-white glitch-font text-center w-full">
                   <span className="glitch" data-text="Entering Blackhole...">
                     Entering Blackhole...
                   </span>
