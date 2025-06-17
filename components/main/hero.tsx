@@ -7,9 +7,9 @@ export const Hero = () => {
         autoPlay
         muted
         loop
-        className="rotate-180 absolute left-0 w-full h-full object-cover -z-20"
+        className="rotate-180 absolute left-0 w-full h-full object-cover -z-20 final-blackhole-position"
         style={{ 
-          top: "calc(var(--blackhole-final-top) + 10px)" // Move 10-15px lower for navbar alignment
+          top: "calc(var(--blackhole-final-top) + 10px)" // Keep hero position exactly as is
         }}
       >
         <source src="/videos/blackhole.webm" type="video/webm" />
