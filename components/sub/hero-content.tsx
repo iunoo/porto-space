@@ -16,10 +16,10 @@ export const HeroContent = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Extended delay: 1.9s total loader time + 0.2s additional delay
+    // Show content 200ms after blackhole finishes (1.8s + 0.2s)
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 2100);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);

@@ -16,11 +16,11 @@ export const EntryLoader = () => {
       setShowText(false);
     }, 800);
 
-    // Hide entire loader after 1.9 seconds (1s animation + 0.9s buffer)
+    // Hide entire loader after 1.8 seconds (0.8s + 1s animation)
     const loaderTimer = setTimeout(() => {
       setIsVisible(false);
       document.body.classList.remove('preloader-active');
-    }, 1900);
+    }, 1800);
 
     return () => {
       clearTimeout(textTimer);
@@ -28,9 +28,6 @@ export const EntryLoader = () => {
       document.body.classList.remove('preloader-active');
     };
   }, []);
-
-  // Original easing curve for better momentum
-  const gravitationalEasing = [0.25, 0.46, 0.45, 0.94];
 
   return (
     <AnimatePresence>
@@ -45,12 +42,11 @@ export const EntryLoader = () => {
           <motion.div
             initial={{ y: 0 }}
             animate={{ 
-              y: showText ? 0 : "calc(-1 * var(--blackhole-alignment-offset))"
+              y: showText ? 0 : -340
             }}
             transition={{ 
               duration: showText ? 0 : 1.0,
-              delay: showText ? 0 : 0.1,
-              ease: gravitationalEasing
+              ease: "easeInOut"
             }}
             className="absolute inset-0 w-full h-full"
           >
@@ -59,34 +55,13 @@ export const EntryLoader = () => {
               muted
               loop
               playsInline
-              className="rotate-180 absolute left-0 w-full h-full object-cover"
-              style={{ 
-                top: 'var(--blackhole-final-position)'
-              }}
+              className="rotate-180 absolute top-0 left-0 w-full h-full object-cover"
             >
               <source src="/videos/blackhole.webm" type="video/webm" />
             </video>
           </motion.div>
 
-          {/* Stars Background */}
-          <motion.div
-            initial={{ y: 0 }}
-            animate={{ 
-              y: showText ? 0 : "calc(-1 * var(--blackhole-alignment-offset))"
-            }}
-            transition={{ 
-              duration: showText ? 0 : 1.0,
-              delay: showText ? 0 : 0.1,
-              ease: gravitationalEasing
-            }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <div className="w-full h-full opacity-30 absolute flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030014]/10 to-[#030014]/30"></div>
-            </div>
-          </motion.div>
-
-          {/* Entry Text - Perfectly Centered Under Blackhole */}
+          {/* Entry Text */}
           <AnimatePresence>
             {showText && (
               <motion.div
