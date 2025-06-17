@@ -42,7 +42,7 @@ export const EntryLoader = () => {
           <motion.div
             initial={{ y: 0 }}
             animate={{ 
-              y: showText ? 0 : -340
+              y: showText ? 0 : -350
             }}
             transition={{ 
               duration: showText ? 0 : 1.0,
