@@ -41,9 +41,9 @@ export const EntryLoader = () => {
           {/* Blackhole Video Container */}
           <motion.div
             initial={{ y: 0 }}
-            animate={{ y: showText ? 0 : -360 }}
+            animate={{ y: showText ? 0 : -365 }}
             transition={{ 
-              duration: 0.4, 
+              duration: 0.5, 
               delay: showText ? 0 : 0.1,
               ease: "easeInOut"
             }}
@@ -63,9 +63,9 @@ export const EntryLoader = () => {
           {/* Stars Background */}
           <motion.div
             initial={{ y: 0 }}
-            animate={{ y: showText ? 0 : -360 }}
+            animate={{ y: showText ? 0 : -365 }}
             transition={{ 
-              duration: 0.4, 
+              duration: 0.5, 
               delay: showText ? 0 : 0.1,
               ease: "easeInOut"
             }}

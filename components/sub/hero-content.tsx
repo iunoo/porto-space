@@ -4,6 +4,7 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import {
   slideInFromLeft,
@@ -12,10 +13,21 @@ import {
 } from "@/lib/motion";
 
 export const HeroContent = () => {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    // Delay hero content appearance by 1.4 seconds (1.2s loader + 0.2s delay)
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 1400);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <motion.div
       initial="hidden"
-      animate="visible"
+      animate={showContent ? "visible" : "hidden"}
       className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
