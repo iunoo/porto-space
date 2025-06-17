@@ -42,7 +42,7 @@ export const EntryLoader = () => {
           <motion.div
             initial={{ y: 0 }}
             animate={{ 
-              y: showText ? 0 : -350
+              y: showText ? 0 : "var(--blackhole-final-top)"
             }}
             transition={{ 
               duration: showText ? 0 : 1.0,
