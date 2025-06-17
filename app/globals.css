@@ -7,8 +7,8 @@
 
 /* Shared Blackhole Position Variables */
 :root {
-  --blackhole-final-top: -370px; /* Adjusted by -10px for perfect alignment */
-  --blackhole-alignment-offset: 370px; /* Updated to match */
+  --blackhole-final-top: -365px; /* Adjusted to -365px for pixel-perfect alignment */
+  --blackhole-alignment-offset: 365px; /* Updated to match */
 }
 
 .cursive {
