@@ -16,7 +16,7 @@ export const Navbar = () => {
         <div className="flex items-center flex-1">
           <Link
             href="#about-me"
-            className="flex items-center"
+            className="flex items-center group"
           >
             <Image
               src="/logo.png"
@@ -26,8 +26,10 @@ export const Navbar = () => {
               draggable={false}
               className="cursor-pointer"
             />
-            <div className="hidden md:flex md:self font-bold ml-[10px] text-gray-300">
-              Syahbandi – AI-Powered Systems Builder
+            <div className="hidden md:flex md:self font-bold ml-[10px] text-gray-300 relative">
+              <span className="nav-glitch-hover" data-text="Syahbandi – AI-Powered Systems Builder">
+                Syahbandi – AI-Powered Systems Builder
+              </span>
             </div>
           </Link>
         </div>
@@ -39,8 +41,9 @@ export const Navbar = () => {
               <Link
                 key={link.title}
                 href={link.link ?? ''}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+                className="cursor-pointer transition relative nav-link-glitch"
                 title={`Navigate to ${link.title}`}
+                data-text={link.title}
               >
                 {link.title}
               </Link>

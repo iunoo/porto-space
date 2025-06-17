@@ -33,7 +33,9 @@ export const SkillText = () => {
         variants={slideInFromRight(0.5)}
         className="glitch-font text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
       >
-        A toolkit of technologies I use to build real-world products — from frontend to backend.
+        <span className="glitch" data-text="A toolkit of technologies I use to build real-world products — from frontend to backend.">
+          A toolkit of technologies I use to build real-world products — from frontend to backend.
+        </span>
       </motion.div>
     </div>
   );

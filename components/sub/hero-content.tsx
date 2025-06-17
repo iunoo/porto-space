@@ -14,12 +14,13 @@ import {
 
 export const HeroContent = () => {
   const [showContent, setShowContent] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
-    // Show content 200ms after blackhole finishes (1.8s + 0.2s)
+    // Show content after entry loader finishes (1s + 0.2s buffer)
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 2000);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -34,12 +35,29 @@ export const HeroContent = () => {
         <motion.div
           variants={slideInFromTop}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
+          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] relative cursor-pointer"
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+          onClick={() => setShowTooltip(!showTooltip)}
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
             AI-Powered Systems Builder
           </h1>
+          
+          {/* Tooltip */}
+          {showTooltip && (
+            <motion.div
+              initial={{ opacity: 0, y: 10, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.9 }}
+              className="absolute top-full left-0 mt-2 p-3 bg-[#1a0b2e] border border-[#7042f88b] rounded-lg shadow-lg z-50 w-80 glitch-font text-xs"
+            >
+              <span className="glitch text-gray-300" data-text="Built using real-time AI workflows, code and no-code hybrid pipelines, and system orchestration.">
+                Built using real-time AI workflows, code and no-code hybrid pipelines, and system orchestration.
+              </span>
+            </motion.div>
+          )}
         </motion.div>
 
         <motion.div

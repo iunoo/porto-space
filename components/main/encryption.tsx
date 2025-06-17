@@ -46,8 +46,8 @@ export const Encryption = () => {
 
       <div className="absolute z-[20] bottom-[10px] px-[5px]">
         <div className="glitch-font text-[20px] font-medium text-center text-gray-300">
-          <span className="glitch" data-text="Fortified by intelligence, protected by design.">
-            Fortified by intelligence, protected by design.
+          <span className="glitch" data-text="Fortified by intelligent automation.">
+            Fortified by intelligent automation.
           </span>
         </div>
       </div>
