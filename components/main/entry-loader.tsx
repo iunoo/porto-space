@@ -16,11 +16,11 @@ export const EntryLoader = () => {
       setShowText(false);
     }, 800);
 
-    // Hide entire loader after 1.8 seconds (1s animation + 0.8s buffer)
+    // Hide entire loader after 1.9 seconds (1s animation + 0.9s buffer)
     const loaderTimer = setTimeout(() => {
       setIsVisible(false);
       document.body.classList.remove('preloader-active');
-    }, 1800);
+    }, 1900);
 
     return () => {
       clearTimeout(textTimer);
@@ -29,7 +29,7 @@ export const EntryLoader = () => {
     };
   }, []);
 
-  // Custom easing curve for gravitational pull with overshoot
+  // Original easing curve for better momentum
   const gravitationalEasing = [0.25, 0.46, 0.45, 0.94];
 
   return (
@@ -45,13 +45,12 @@ export const EntryLoader = () => {
           <motion.div
             initial={{ y: 0 }}
             animate={{ 
-              y: showText ? 0 : [-365, -368, -365] // Overshoot by 3px then settle
+              y: showText ? 0 : -375 // Increased by 10px for better alignment
             }}
             transition={{ 
-              duration: showText ? 0 : 1.0, // Extended to 1 second
+              duration: showText ? 0 : 1.0, // Extended to 1 second for fluidity
               delay: showText ? 0 : 0.1,
-              ease: gravitationalEasing,
-              times: showText ? undefined : [0, 0.85, 1] // Overshoot at 85%, settle by 100%
+              ease: gravitationalEasing // Original easing curve
             }}
             className="absolute inset-0 w-full h-full"
           >
@@ -70,13 +69,12 @@ export const EntryLoader = () => {
           <motion.div
             initial={{ y: 0 }}
             animate={{ 
-              y: showText ? 0 : [-365, -368, -365] // Same overshoot pattern
+              y: showText ? 0 : -375 // Same increased offset
             }}
             transition={{ 
               duration: showText ? 0 : 1.0, // Extended to 1 second
               delay: showText ? 0 : 0.1,
-              ease: gravitationalEasing,
-              times: showText ? undefined : [0, 0.85, 1] // Synchronized overshoot
+              ease: gravitationalEasing // Original easing curve
             }}
             className="absolute inset-0 w-full h-full"
           >

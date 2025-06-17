@@ -16,7 +16,7 @@ export const HeroContent = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Extended delay: 1.8s total loader time + 0.3s additional delay
+    // Extended delay: 1.9s total loader time + 0.2s additional delay
     const timer = setTimeout(() => {
       setShowContent(true);
     }, 2100);
