@@ -45,12 +45,12 @@ export const EntryLoader = () => {
           <motion.div
             initial={{ y: 0 }}
             animate={{ 
-              y: showText ? 0 : -375 // Increased by 10px for better alignment
+              y: showText ? 0 : "calc(-1 * var(--blackhole-alignment-offset))"
             }}
             transition={{ 
-              duration: showText ? 0 : 1.0, // Extended to 1 second for fluidity
+              duration: showText ? 0 : 1.0,
               delay: showText ? 0 : 0.1,
-              ease: gravitationalEasing // Original easing curve
+              ease: gravitationalEasing
             }}
             className="absolute inset-0 w-full h-full"
           >
@@ -59,7 +59,10 @@ export const EntryLoader = () => {
               muted
               loop
               playsInline
-              className="rotate-180 absolute top-0 left-0 w-full h-full object-cover"
+              className="rotate-180 absolute left-0 w-full h-full object-cover"
+              style={{ 
+                top: 'var(--blackhole-final-position)'
+              }}
             >
               <source src="/videos/blackhole.webm" type="video/webm" />
             </video>
@@ -69,12 +72,12 @@ export const EntryLoader = () => {
           <motion.div
             initial={{ y: 0 }}
             animate={{ 
-              y: showText ? 0 : -375 // Same increased offset
+              y: showText ? 0 : "calc(-1 * var(--blackhole-alignment-offset))"
             }}
             transition={{ 
-              duration: showText ? 0 : 1.0, // Extended to 1 second
+              duration: showText ? 0 : 1.0,
               delay: showText ? 0 : 0.1,
-              ease: gravitationalEasing // Original easing curve
+              ease: gravitationalEasing
             }}
             className="absolute inset-0 w-full h-full"
           >

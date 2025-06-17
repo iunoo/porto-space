@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Shared Blackhole Position Variables */
+:root {
+  --blackhole-final-position: -340px;
+  --blackhole-alignment-offset: 375px;
+}
+
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }
