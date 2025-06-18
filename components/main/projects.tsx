@@ -5,7 +5,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-10 md:py-20 mobile-section-padding mobile-section-spacing"
+      className="flex flex-col items-center justify-center py-10 md:py-20 mobile-section-padding mobile-section-spacing overflow-hidden"
     >
       <h1 className="text-2xl md:text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10 md:py-20 text-center">
         Selected Works by Syahbandi
@@ -14,9 +14,9 @@ export const Projects = () => {
         Explore a curated collection of apps, tools, and smart solutions I've built.
       </p>
       
-      {/* Improved project grid with glassmorphism */}
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 place-items-center">
+      {/* FIXED: Improved project grid with proper constraints */}
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 place-items-center max-w-full">
           {PROJECTS.map((project, index) => (
             <div key={project.title} className="w-full max-w-sm mobile-project-card">
               <ProjectCard
