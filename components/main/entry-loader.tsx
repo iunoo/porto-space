@@ -34,7 +34,7 @@ export const EntryLoader = () => {
       {isVisible && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          // exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
           className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden flex items-center justify-center"
         >
@@ -42,7 +42,7 @@ export const EntryLoader = () => {
           <motion.div
             className="relative flex items-center justify-center w-full h-full"
             animate={startTransition ? {
-              y: "calc(-50vh + 30px)", // Move to exact portfolio blackhole position
+              y: "calc(-50vh + 29px)", // Move to exact portfolio blackhole position
               // NO SCALE - removed scale property completely
             } : {
               y: 0,
