@@ -38,14 +38,15 @@ export const SkillDataProvider = ({
       animate={inView ? "visible" : "hidden"}
       custom={index}
       transition={{ delay: index * animationDelay }}
-      className="mobile-skill-icon"
+      className="skill-icon-container mobile-skill-icon"
+      title={name}
     >
       <Image 
         src={`/skills/${src}`} 
         width={width} 
         height={height} 
         alt={name}
-        className="w-auto h-auto max-w-[60px] max-h-[60px] md:max-w-none md:max-h-none"
+        className="w-auto h-auto object-contain"
         onError={(e) => {
           console.error(`Failed to load skill icon: /skills/${src}`);
           // Fallback to a placeholder or hide the image
