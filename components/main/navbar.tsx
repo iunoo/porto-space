@@ -9,19 +9,23 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
-  // Smooth scroll function with custom offsets
+  // Smooth scroll function with PERFECT offsets
   const smoothScrollTo = (elementId: string) => {
     const element = document.getElementById(elementId.replace('#', ''));
     if (element) {
       let offsetTop;
       
-      // Custom offsets for different sections
+      // Custom offsets for different sections - DISESUAIKAN SUPAYA PAS BANGET
       if (elementId === '#about-me') {
         // About me should show the hero section properly
-        offsetTop = element.offsetTop - 120; // Reduced offset to show more of hero
+        offsetTop = element.offsetTop - 100;
       } else if (elementId === '#skills') {
-        // Skills should show welcome box + title + subtitle + ALL icons (tidak kepotong)
-        offsetTop = element.offsetTop - 250; // LEBIH BESAR supaya welcome box keliatan dan tidak ada yang kepotong
+        // Skills harus PAS BANGET - welcome box + title + subtitle + SEMUA icons keliatan
+        // COBA NILAI YANG LEBIH BESAR LAGI supaya tidak ada yang kepotong
+        offsetTop = element.offsetTop - 320; // DIPERBESAR LAGI dari 250 ke 320
+      } else if (elementId === '#projects') {
+        // Projects section
+        offsetTop = element.offsetTop - 100;
       } else {
         // Default offset for other sections
         offsetTop = element.offsetTop - 80;
@@ -35,11 +39,11 @@ export const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Track active section - FIXED: Better logic
+  // Track active section - IMPROVED logic
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['about-me', 'skills', 'projects'];
-      const scrollPosition = window.scrollY + 200; // Increased threshold
+      const scrollPosition = window.scrollY + 200;
 
       // Default to about-me if at top
       if (window.scrollY < 100) {
