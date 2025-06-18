@@ -25,7 +25,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en" className="overflow-x-hidden">
       <body
         className={cn(
-          "bg-[#030014] overflow-y-scroll overflow-x-hidden",
+          "bg-[#030014] overflow-y-scroll overflow-x-hidden preloader-active",
           inter.className
         )}
       >

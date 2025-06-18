@@ -116,38 +116,6 @@ export default function NotFound() {
           </div>
         </motion.div>
       </div>
-
-      <style jsx>{`
-        .stars {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="white" opacity="0.8"/><circle cx="80" cy="40" r="0.5" fill="white" opacity="0.6"/><circle cx="40" cy="60" r="1" fill="white" opacity="0.4"/><circle cx="90" cy="80" r="0.5" fill="white" opacity="0.8"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.6"/></svg>') repeat;
-          animation: move-stars 50s linear infinite;
-        }
-        
-        .twinkling {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="30" cy="30" r="0.5" fill="white" opacity="0.9"/><circle cx="70" cy="70" r="1" fill="white" opacity="0.7"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.5"/></svg>') repeat;
-          animation: move-twinkling 100s linear infinite;
-        }
-        
-        @keyframes move-stars {
-          from { transform: translateY(0px); }
-          to { transform: translateY(-2000px); }
-        }
-        
-        @keyframes move-twinkling {
-          from { transform: translateY(0px); }
-          to { transform: translateY(-2000px); }
-        }
-      `}</style>
     </div>
   );
 }

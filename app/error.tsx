@@ -122,38 +122,6 @@ export default function Error({
           </a>
         </motion.div>
       </div>
-
-      <style jsx>{`
-        .error-stars {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="red" opacity="0.6"/><circle cx="80" cy="40" r="0.5" fill="purple" opacity="0.4"/><circle cx="40" cy="60" r="1" fill="red" opacity="0.3"/><circle cx="90" cy="80" r="0.5" fill="purple" opacity="0.7"/></svg>') repeat;
-          animation: error-move 30s linear infinite;
-        }
-        
-        .error-glitch-bg {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(45deg, transparent 30%, rgba(255,0,0,0.03) 50%, transparent 70%);
-          animation: glitch-sweep 3s ease-in-out infinite;
-        }
-        
-        @keyframes error-move {
-          from { transform: translateY(0px) rotate(0deg); }
-          to { transform: translateY(-1000px) rotate(360deg); }
-        }
-        
-        @keyframes glitch-sweep {
-          0%, 100% { transform: translateX(-100%); }
-          50% { transform: translateX(100%); }
-        }
-      `}</style>
     </div>
   );
 }

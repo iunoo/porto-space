@@ -7,9 +7,6 @@ export const EntryLoader = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Add body class to prevent scrolling
-    document.body.classList.add('preloader-active');
-
     // Hide entire loader after 3 seconds (lebih lama untuk pamer BH)
     const loaderTimer = setTimeout(() => {
       setIsVisible(false);
