@@ -10,9 +10,9 @@ import {
 } from "@/constants";
 
 export const Skills = () => {
-  // PERSIS SEPERTI GAMBAR: 4 baris + 1 icon Go sendirian di baris ke-5
+  // PERSIS SEPERTI GAMBAR: Sesuai dengan layout yang dikirim
   
-  // Row 1: 11 icons (BUKAN 12!) - baris paling atas
+  // Row 1: 11 icons (HTML, CSS, JS, Tailwind, React, Redux, React Query, TypeScript, Next.js, Framer, Node.js)
   const row1Skills = [
     SKILL_DATA[0], // HTML
     SKILL_DATA[1], // CSS  
@@ -25,24 +25,23 @@ export const Skills = () => {
     SKILL_DATA[8], // Next.js
     SKILL_DATA[9], // Framer
     SKILL_DATA[11], // Node.js
-    // HAPUS Material UI dari row 1!
   ];
 
-  // Row 2: 10 icons
+  // Row 2: 9 icons (HTML, CSS, JS, Tailwind, Material UI, React, Redux, React Query, TypeScript)
   const row2Skills = [
     SKILL_DATA[0], // HTML
     SKILL_DATA[1], // CSS
     SKILL_DATA[2], // JavaScript
     SKILL_DATA[3], // Tailwind
-    FRONTEND_SKILL[4], // Material UI (pindah ke sini)
+    FRONTEND_SKILL[4], // Material UI
     SKILL_DATA[4], // React
     SKILL_DATA[5], // Redux
     SKILL_DATA[6], // React Query
     SKILL_DATA[7], // TypeScript
-    SKILL_DATA[8], // Next.js
+    // HAPUS Next.js dari row 2!
   ];
 
-  // Row 3: 7 icons
+  // Row 3: 6 icons (Node.js, Express.js, MongoDB, Firebase, PostgreSQL, MySQL)
   const row3Skills = [
     SKILL_DATA[11], // Node.js
     BACKEND_SKILL[1], // Express.js
@@ -50,10 +49,10 @@ export const Skills = () => {
     BACKEND_SKILL[3], // Firebase
     BACKEND_SKILL[4], // PostgreSQL
     BACKEND_SKILL[5], // MySQL
-    BACKEND_SKILL[7], // GraphQL
+    // HAPUS GraphQL dari row 3!
   ];
 
-  // Row 4: 4 icons
+  // Row 4: 4 icons (React Native, Prisma, Docker, Figma)
   const row4Skills = [
     FULLSTACK_SKILL[0], // React Native
     BACKEND_SKILL[6], // Prisma
@@ -77,7 +76,7 @@ export const Skills = () => {
       {/* PERSIS SEPERTI GAMBAR: Pyramid dengan 5 baris */}
       <div className="pyramid-container-exact">
         
-        {/* Row 1: 11 icons (PERSIS seperti gambar!) */}
+        {/* Row 1: 11 icons */}
         <div className="pyramid-row-1-exact">
           {row1Skills.map((skill, i) => (
             <SkillDataProvider
@@ -91,7 +90,7 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 2: 10 icons */}
+        {/* Row 2: 9 icons (BUKAN 10!) */}
         <div className="pyramid-row-2-exact">
           {row2Skills.map((skill, i) => (
             <SkillDataProvider
@@ -105,7 +104,7 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 3: 7 icons */}
+        {/* Row 3: 6 icons (BUKAN 7!) */}
         <div className="pyramid-row-3-exact">
           {row3Skills.map((skill, i) => (
             <SkillDataProvider
