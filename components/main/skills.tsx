@@ -12,7 +12,7 @@ import {
 export const Skills = () => {
   // PERSIS SEPERTI GAMBAR: 4 baris + 1 icon Go sendirian di baris ke-5
   
-  // Row 1: 12 icons (baris paling atas - paling panjang)
+  // Row 1: 11 icons (BUKAN 12!) - baris paling atas
   const row1Skills = [
     SKILL_DATA[0], // HTML
     SKILL_DATA[1], // CSS  
@@ -25,16 +25,16 @@ export const Skills = () => {
     SKILL_DATA[8], // Next.js
     SKILL_DATA[9], // Framer
     SKILL_DATA[11], // Node.js
-    FRONTEND_SKILL[4], // Material UI
+    // HAPUS Material UI dari row 1!
   ];
 
   // Row 2: 10 icons
   const row2Skills = [
-    SKILL_DATA[0], // HTML (duplicate for layout)
-    SKILL_DATA[1], // CSS (duplicate for layout)
-    SKILL_DATA[2], // JavaScript (duplicate for layout)
-    SKILL_DATA[3], // Tailwind (duplicate for layout)
-    FRONTEND_SKILL[4], // Material UI
+    SKILL_DATA[0], // HTML
+    SKILL_DATA[1], // CSS
+    SKILL_DATA[2], // JavaScript
+    SKILL_DATA[3], // Tailwind
+    FRONTEND_SKILL[4], // Material UI (pindah ke sini)
     SKILL_DATA[4], // React
     SKILL_DATA[5], // Redux
     SKILL_DATA[6], // React Query
@@ -77,7 +77,7 @@ export const Skills = () => {
       {/* PERSIS SEPERTI GAMBAR: Pyramid dengan 5 baris */}
       <div className="pyramid-container-exact">
         
-        {/* Row 1: 12 icons (paling atas - paling panjang) */}
+        {/* Row 1: 11 icons (PERSIS seperti gambar!) */}
         <div className="pyramid-row-1-exact">
           {row1Skills.map((skill, i) => (
             <SkillDataProvider
