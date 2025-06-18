@@ -10,7 +10,8 @@ import {
 } from "@/constants";
 
 export const Skills = () => {
-  // PERFECT: Distribusi skills persis seperti gambar
+  // PERFECT: 4 BARIS + 1 baris terakhir dengan 1 icon
+  
   // Row 1: 11 icons (baris paling atas - paling panjang)
   const row1Skills = [
     SKILL_DATA[0], // HTML
@@ -26,16 +27,16 @@ export const Skills = () => {
     SKILL_DATA[11], // Node.js
   ];
 
-  // Row 2: 10 icons
+  // Row 2: 10 icons (FRONTEND_SKILL)
   const row2Skills = FRONTEND_SKILL;
 
-  // Row 3: 8 icons  
+  // Row 3: 8 icons (BACKEND_SKILL)  
   const row3Skills = BACKEND_SKILL;
 
-  // Row 4: 4 icons
+  // Row 4: 4 icons (FULLSTACK_SKILL)
   const row4Skills = FULLSTACK_SKILL;
 
-  // Row 5: 1 icon (puncak pyramid)
+  // Row 5: 1 icon (Go - puncak pyramid)
   const row5Skills = OTHER_SKILL;
 
   return (
@@ -46,7 +47,7 @@ export const Skills = () => {
     >
       <SkillText />
 
-      {/* PERFECT: Pyramid Inverted Layout - Persis Seperti Gambar */}
+      {/* PERFECT: 4 Baris + 1 Icon Terakhir */}
       <div className="perfect-pyramid-container">
         
         {/* Row 1: 11 icons (paling atas - paling panjang) */}
@@ -105,7 +106,7 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 5: 1 icon (paling bawah - puncak pyramid) */}
+        {/* Row 5: 1 icon (Go - puncak pyramid) */}
         <div className="perfect-row-5">
           {row5Skills.map((skill, i) => (
             <SkillDataProvider
