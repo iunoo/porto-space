@@ -10,9 +10,9 @@ import {
 } from "@/constants";
 
 export const Skills = () => {
-  // FINAL: MAKSIMAL 4 BARIS - TIDAK BOLEH ADA BARIS KE-5!
+  // PERSIS SEPERTI GAMBAR: 4 baris + 1 icon Go sendirian di baris ke-5
   
-  // Row 1: 9 icons (baris paling atas)
+  // Row 1: 12 icons (baris paling atas - paling panjang)
   const row1Skills = [
     SKILL_DATA[0], // HTML
     SKILL_DATA[1], // CSS  
@@ -23,35 +23,47 @@ export const Skills = () => {
     SKILL_DATA[6], // React Query
     SKILL_DATA[7], // TypeScript
     SKILL_DATA[8], // Next.js
-  ];
-
-  // Row 2: 8 icons
-  const row2Skills = [
-    SKILL_DATA[9],  // Framer
+    SKILL_DATA[9], // Framer
     SKILL_DATA[11], // Node.js
     FRONTEND_SKILL[4], // Material UI
-    BACKEND_SKILL[0], // Node.js (duplicate, but different context)
+  ];
+
+  // Row 2: 10 icons
+  const row2Skills = [
+    SKILL_DATA[0], // HTML (duplicate for layout)
+    SKILL_DATA[1], // CSS (duplicate for layout)
+    SKILL_DATA[2], // JavaScript (duplicate for layout)
+    SKILL_DATA[3], // Tailwind (duplicate for layout)
+    FRONTEND_SKILL[4], // Material UI
+    SKILL_DATA[4], // React
+    SKILL_DATA[5], // Redux
+    SKILL_DATA[6], // React Query
+    SKILL_DATA[7], // TypeScript
+    SKILL_DATA[8], // Next.js
+  ];
+
+  // Row 3: 7 icons
+  const row3Skills = [
+    SKILL_DATA[11], // Node.js
     BACKEND_SKILL[1], // Express.js
     BACKEND_SKILL[2], // MongoDB
     BACKEND_SKILL[3], // Firebase
     BACKEND_SKILL[4], // PostgreSQL
-  ];
-
-  // Row 3: 6 icons
-  const row3Skills = [
     BACKEND_SKILL[5], // MySQL
-    BACKEND_SKILL[6], // Prisma
     BACKEND_SKILL[7], // GraphQL
-    FULLSTACK_SKILL[0], // React Native
-    FULLSTACK_SKILL[1], // Tauri
-    FULLSTACK_SKILL[2], // Docker
   ];
 
-  // Row 4: 3 icons (BARIS TERAKHIR - TIDAK ADA LAGI!)
+  // Row 4: 4 icons
   const row4Skills = [
+    FULLSTACK_SKILL[0], // React Native
+    BACKEND_SKILL[6], // Prisma
+    FULLSTACK_SKILL[2], // Docker
     FULLSTACK_SKILL[3], // Figma
-    OTHER_SKILL[0],     // Go
-    SKILL_DATA[10],     // Stripe
+  ];
+
+  // Row 5: 1 icon (Go sendirian)
+  const row5Skills = [
+    OTHER_SKILL[0], // Go
   ];
 
   return (
@@ -62,14 +74,14 @@ export const Skills = () => {
     >
       <SkillText />
 
-      {/* FINAL: MAKSIMAL 4 BARIS SAJA! */}
-      <div className="perfect-pyramid-container">
+      {/* PERSIS SEPERTI GAMBAR: Pyramid dengan 5 baris */}
+      <div className="pyramid-container-exact">
         
-        {/* Row 1: 9 icons (paling atas - paling panjang) */}
-        <div className="perfect-row-1">
+        {/* Row 1: 12 icons (paling atas - paling panjang) */}
+        <div className="pyramid-row-1-exact">
           {row1Skills.map((skill, i) => (
             <SkillDataProvider
-              key={skill.skill_name}
+              key={`${skill.skill_name}-1-${i}`}
               src={skill.image}
               name={skill.skill_name}
               width={skill.width}
@@ -79,11 +91,11 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 2: 8 icons */}
-        <div className="perfect-row-2">
+        {/* Row 2: 10 icons */}
+        <div className="pyramid-row-2-exact">
           {row2Skills.map((skill, i) => (
             <SkillDataProvider
-              key={`${skill.skill_name}-${i}`}
+              key={`${skill.skill_name}-2-${i}`}
               src={skill.image}
               name={skill.skill_name}
               width={skill.width}
@@ -93,11 +105,11 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 3: 6 icons */}
-        <div className="perfect-row-3">
+        {/* Row 3: 7 icons */}
+        <div className="pyramid-row-3-exact">
           {row3Skills.map((skill, i) => (
             <SkillDataProvider
-              key={`${skill.skill_name}-${i}`}
+              key={`${skill.skill_name}-3-${i}`}
               src={skill.image}
               name={skill.skill_name}
               width={skill.width}
@@ -107,16 +119,30 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 4: 3 icons (BARIS TERAKHIR - TIDAK ADA LAGI SETELAH INI!) */}
-        <div className="perfect-row-4">
+        {/* Row 4: 4 icons */}
+        <div className="pyramid-row-4-exact">
           {row4Skills.map((skill, i) => (
             <SkillDataProvider
-              key={`${skill.skill_name}-${i}`}
+              key={`${skill.skill_name}-4-${i}`}
               src={skill.image}
               name={skill.skill_name}
               width={skill.width}
               height={skill.height}
               index={i + row1Skills.length + row2Skills.length + row3Skills.length}
+            />
+          ))}
+        </div>
+
+        {/* Row 5: 1 icon (Go sendirian) */}
+        <div className="pyramid-row-5-exact">
+          {row5Skills.map((skill, i) => (
+            <SkillDataProvider
+              key={`${skill.skill_name}-5-${i}`}
+              src={skill.image}
+              name={skill.skill_name}
+              width={skill.width}
+              height={skill.height}
+              index={i + row1Skills.length + row2Skills.length + row3Skills.length + row4Skills.length}
             />
           ))}
         </div>

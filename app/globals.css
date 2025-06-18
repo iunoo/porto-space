@@ -929,87 +929,103 @@ body, html {
   overflow-x: hidden;
 }
 
-/* FINAL PERFECT: Pyramid Inverted Skills Layout - MAKSIMAL 4 BARIS SAJA! */
-.perfect-pyramid-container {
+/* PERSIS SEPERTI GAMBAR: Pyramid Layout dengan 5 baris */
+.pyramid-container-exact {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 2rem auto;
   padding: 0 2rem;
 }
 
-/* Row 1: 9 icons (paling atas - paling panjang) */
-.perfect-row-1 {
+/* Row 1: 12 icons (paling atas - paling panjang) */
+.pyramid-row-1-exact {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
 }
 
-/* Row 2: 8 icons */
-.perfect-row-2 {
+/* Row 2: 10 icons */
+.pyramid-row-2-exact {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   width: 90%;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
-/* Row 3: 6 icons */
-.perfect-row-3 {
+/* Row 3: 7 icons */
+.pyramid-row-3-exact {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   width: 75%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
-/* Row 4: 3 icons (BARIS TERAKHIR - TIDAK ADA LAGI!) */
-.perfect-row-4 {
+/* Row 4: 4 icons */
+.pyramid-row-4-exact {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   width: 50%;
-  max-width: 300px;
+  max-width: 400px;
 }
 
-/* Mobile Pyramid Layout - Tetap pyramid tapi lebih compact */
+/* Row 5: 1 icon (Go sendirian) */
+.pyramid-row-5-exact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 25%;
+  max-width: 100px;
+}
+
+/* Mobile Pyramid Layout */
 @media (max-width: 767px) {
-  .perfect-pyramid-container {
+  .pyramid-container-exact {
     gap: 1.5rem;
     margin: 1.5rem auto;
     padding: 0 1rem;
   }
 
-  .perfect-row-1 {
+  .pyramid-row-1-exact {
     gap: 1rem;
     max-width: 100%;
   }
 
-  .perfect-row-2 {
+  .pyramid-row-2-exact {
     gap: 1rem;
     max-width: 95%;
   }
 
-  .perfect-row-3 {
+  .pyramid-row-3-exact {
     gap: 1rem;
     max-width: 85%;
   }
 
-  .perfect-row-4 {
+  .pyramid-row-4-exact {
     gap: 1rem;
     max-width: 70%;
+  }
+
+  .pyramid-row-5-exact {
+    gap: 1rem;
+    max-width: 50%;
   }
 }
 
