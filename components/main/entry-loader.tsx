@@ -42,7 +42,7 @@ export const EntryLoader = () => {
           <motion.div
             className="relative flex items-center justify-center w-full h-full"
             animate={startTransition ? {
-              y: "calc(-50vh + -10px)", // Move to exact portfolio blackhole position
+              y: "calc(-50vh + -20px)", // Move to exact portfolio blackhole position
               // NO SCALE - removed scale property completely
             } : {
               y: 0,
