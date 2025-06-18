@@ -15,15 +15,15 @@ A modern, interactive portfolio website built with Next.js 14, featuring stunnin
 - **Glitch Effects**: Custom CSS animations for cyberpunk aesthetics
 - **Interactive Elements**: Hover effects, tooltips, and micro-interactions
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Local Development)
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn package manager
-- Git
+- **Node.js 18+** (Recommended: 18.17.0 or higher)
+- **npm** or **yarn** package manager
+- **Git** for version control
 
-### Installation
+### Installation Steps
 
 1. **Clone the repository**
    ```bash
@@ -50,12 +50,174 @@ A modern, interactive portfolio website built with Next.js 14, featuring stunnin
 
 ## 🛠️ Available Scripts
 
-- `npm run dev` - Start development server
+- `npm run dev` - Start development server (localhost:3000)
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint errors automatically
 - `npm run type-check` - Run TypeScript type checking
+
+## 🖥️ VPS/Server Installation Guide
+
+### Step 1: Server Setup
+
+1. **Connect to your VPS**
+   ```bash
+   ssh root@your-server-ip
+   # or
+   ssh username@your-server-ip
+   ```
+
+2. **Update system packages**
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   ```
+
+3. **Install Node.js 18+ (using NodeSource)**
+   ```bash
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   sudo apt-get install -y nodejs
+   
+   # Verify installation
+   node --version  # Should show v18.x.x
+   npm --version   # Should show 9.x.x or higher
+   ```
+
+4. **Install Git**
+   ```bash
+   sudo apt install git -y
+   ```
+
+5. **Install PM2 (Process Manager)**
+   ```bash
+   sudo npm install -g pm2
+   ```
+
+### Step 2: Deploy Application
+
+1. **Clone your repository**
+   ```bash
+   cd /var/www  # or your preferred directory
+   sudo git clone https://github.com/iunoo/space-portfolio.git
+   cd space-portfolio
+   ```
+
+2. **Set proper permissions**
+   ```bash
+   sudo chown -R $USER:$USER /var/www/space-portfolio
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Build the application**
+   ```bash
+   npm run build
+   ```
+
+5. **Start with PM2**
+   ```bash
+   pm2 start npm --name "space-portfolio" -- start
+   
+   # Save PM2 configuration
+   pm2 save
+   pm2 startup
+   ```
+
+### Step 3: Configure Nginx (Optional but Recommended)
+
+1. **Install Nginx**
+   ```bash
+   sudo apt install nginx -y
+   ```
+
+2. **Create Nginx configuration**
+   ```bash
+   sudo nano /etc/nginx/sites-available/space-portfolio
+   ```
+
+3. **Add this configuration:**
+   ```nginx
+   server {
+       listen 80;
+       server_name your-domain.com www.your-domain.com;
+       
+       location / {
+           proxy_pass http://localhost:3000;
+           proxy_http_version 1.1;
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection 'upgrade';
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+           proxy_cache_bypass $http_upgrade;
+       }
+   }
+   ```
+
+4. **Enable the site**
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/space-portfolio /etc/nginx/sites-enabled/
+   sudo nginx -t  # Test configuration
+   sudo systemctl restart nginx
+   ```
+
+### Step 4: SSL Certificate (Optional)
+
+1. **Install Certbot**
+   ```bash
+   sudo apt install certbot python3-certbot-nginx -y
+   ```
+
+2. **Get SSL certificate**
+   ```bash
+   sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+   ```
+
+### Step 5: Useful PM2 Commands
+
+```bash
+# View running processes
+pm2 list
+
+# View logs
+pm2 logs space-portfolio
+
+# Restart application
+pm2 restart space-portfolio
+
+# Stop application
+pm2 stop space-portfolio
+
+# Delete application from PM2
+pm2 delete space-portfolio
+
+# Monitor resources
+pm2 monit
+```
+
+### Step 6: Update Deployment
+
+When you want to update your portfolio:
+
+```bash
+cd /var/www/space-portfolio
+
+# Pull latest changes
+git pull origin main
+
+# Install new dependencies (if any)
+npm install
+
+# Rebuild application
+npm run build
+
+# Restart with PM2
+pm2 restart space-portfolio
+```
 
 ## 📁 Project Structure
 
@@ -94,64 +256,91 @@ space-portfolio/
    - Change title, description, and keywords
    - Update author information
 
+### Navigation Scroll Offsets
+
+Edit `components/main/navbar.tsx` to adjust scroll positions:
+
+```javascript
+// About me offset (hero section)
+offsetTop = element.offsetTop - 180;
+
+// Skills offset (perfect alignment)
+offsetTop = element.offsetTop - 10;
+
+// Projects offset
+offsetTop = element.offsetTop - 100;
+```
+
 ### Styling
 
 - **Colors**: Modify the gradient colors in `app/globals.css`
 - **Animations**: Customize glitch effects and transitions
 - **Layout**: Adjust spacing and responsive breakpoints
 
-## 🚀 Deployment
+## 🚀 Deployment Options
 
-### Vercel (Recommended)
+### Option 1: Vercel (Recommended for Easy Deployment)
 
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Deploy automatically with zero configuration
 
-### Manual Deployment
+### Option 2: Netlify
 
-1. **Build the project**
-   ```bash
-   npm run build
-   ```
+1. Build the project: `npm run build`
+2. Upload the `out` folder to Netlify
+3. Configure custom domain if needed
 
-2. **Start production server**
-   ```bash
-   npm start
-   ```
+### Option 3: VPS/Server (Full Control)
 
-### VPS/Server Deployment
-
-1. **Install PM2 globally**
-   ```bash
-   npm install -g pm2
-   ```
-
-2. **Build and start with PM2**
-   ```bash
-   npm run build
-   pm2 start npm --name "space-portfolio" -- start
-   ```
-
-3. **Configure Nginx** (optional)
-   - Set up reverse proxy for better performance
-   - Enable SSL with Let's Encrypt
+Follow the **VPS Installation Guide** above for complete server setup.
 
 ## 🔧 Environment Variables
 
 Create a `.env.local` file for environment-specific configurations:
 
 ```env
-# Add your environment variables here
+# Site Configuration
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+
+# Analytics (optional)
+NEXT_PUBLIC_GA_ID=your-google-analytics-id
 ```
 
 ## 📱 Browser Support
 
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
+- ✅ Chrome (recommended)
+- ✅ Firefox
+- ✅ Safari
+- ✅ Edge
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+1. **Port 3000 already in use**
+   ```bash
+   # Kill process on port 3000
+   sudo lsof -ti:3000 | xargs kill -9
+   ```
+
+2. **Permission denied on VPS**
+   ```bash
+   # Fix ownership
+   sudo chown -R $USER:$USER /var/www/space-portfolio
+   ```
+
+3. **PM2 not starting on boot**
+   ```bash
+   pm2 startup
+   pm2 save
+   ```
+
+4. **Nginx configuration test failed**
+   ```bash
+   sudo nginx -t
+   # Fix any syntax errors shown
+   ```
 
 ## 🤝 Contributing
 
