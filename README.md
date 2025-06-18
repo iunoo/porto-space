@@ -27,7 +27,7 @@ A modern, interactive portfolio website built with Next.js 14, featuring stunnin
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/space-portfolio.git
+   git clone https://github.com/iunoo/space-portfolio.git
    cd space-portfolio
    ```
 
@@ -170,6 +170,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Original Author
 - **[Sanidhya Kumar Verma](https://github.com/sanidhyy)** - Original Space Portfolio template
 - **Repository**: [space-portfolio](https://github.com/sanidhyy/space-portfolio)
+
+### Modified By
+- **[iunoo](https://github.com/iunoo)** - Customization and modifications for personal portfolio
 
 ### Technologies Used
 - [Next.js](https://nextjs.org/) - React framework
