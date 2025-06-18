@@ -20,8 +20,8 @@ export const Navbar = () => {
         // About me should show the hero section properly
         offsetTop = element.offsetTop - 120; // Reduced offset to show more of hero
       } else if (elementId === '#skills') {
-        // Skills should be perfectly centered and rapi
-        offsetTop = element.offsetTop - 180; // INCREASED untuk posisi lebih rapi seperti gambar 2
+        // Skills should show welcome box + title + subtitle + ALL icons (tidak kepotong)
+        offsetTop = element.offsetTop - 250; // LEBIH BESAR supaya welcome box keliatan dan tidak ada yang kepotong
       } else {
         // Default offset for other sections
         offsetTop = element.offsetTop - 80;
