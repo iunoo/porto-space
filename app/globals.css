@@ -929,29 +929,81 @@ body, html {
   overflow-x: hidden;
 }
 
-/* FIXED: Skills Grid Layout - Rapi dan Teratur */
-.skills-mobile-grid {
+/* PERFECT: Skills Grid Layout - Rapi dan Teratur Seperti Gambar 2 */
+.skills-grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 2rem;
   justify-items: center;
   align-items: center;
-  margin: 1.5rem 0;
-  padding: 0 1rem;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
 }
 
-/* Desktop Skills Layout */
+/* Mobile Skills Layout - 4 kolom rapi */
+@media (max-width: 767px) {
+  .skills-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Desktop Skills Layout - Flex wrap dengan spacing konsisten */
 @media (min-width: 768px) {
-  .skills-mobile-grid {
+  .skills-grid-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    margin: 2rem 0;
-    padding: 0;
+    gap: 2.5rem;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+  }
+}
+
+/* PERFECT: Skill icon container untuk konsistensi ukuran */
+.skill-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.skill-icon-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.skill-icon-container:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(112, 66, 248, 0.6));
+}
+
+/* Mobile skill icon sizing */
+@media (max-width: 767px) {
+  .skill-icon-container {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .skill-icon-container img {
+    max-width: 55px;
+    max-height: 55px;
+  }
+
+  .skill-icon-container:active {
+    transform: scale(0.95);
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(112, 66, 248, 0.5));
   }
 }
 
@@ -974,16 +1026,6 @@ body, html {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-  }
-
-  /* FIXED: Skills section mobile grid - 4 kolom rapi */
-  .skills-mobile-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    justify-items: center;
-    align-items: center;
-    margin: 1rem 0;
-    padding: 0 0.5rem;
   }
 
   /* Mobile glitch text improvements */
@@ -1048,57 +1090,5 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.8rem;
-  }
-
-  /* FIXED: Mobile skill icons - ukuran konsisten dan rapi */
-  .mobile-skill-icon {
-    transition: all 0.2s ease;
-    cursor: pointer;
-    width: 50px !important;
-    height: 50px !important;
-    object-fit: contain;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobile-skill-icon img {
-    max-width: 45px !important;
-    max-height: 45px !important;
-    width: auto !important;
-    height: auto !important;
-  }
-
-  .mobile-skill-icon:active {
-    transform: scale(0.95);
-    filter: brightness(1.2) drop-shadow(0 0 8px rgba(112, 66, 248, 0.5));
-  }
-}
-
-/* FIXED: Skill icon container untuk konsistensi */
-.skill-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  transition: all 0.3s ease;
-}
-
-.skill-icon-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-@media (max-width: 767px) {
-  .skill-icon-container {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .skill-icon-container img {
-    max-width: 45px;
-    max-height: 45px;
   }
 }

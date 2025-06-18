@@ -40,7 +40,7 @@ export const EntryLoader = () => {
               <source src="/videos/blackhole.webm" type="video/webm" />
             </video>
 
-            {/* INTENSE Glitch Loading Text */}
+            {/* INTENSE Glitch Loading Text - GANTI TEKS */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export const EntryLoader = () => {
               className="absolute bottom-1/3 left-0 right-0 z-10 flex items-center justify-center"
             >
               <div 
-                className="text-2xl md:text-4xl font-bold text-white glitch-font text-center entry-loader-intense"
+                className="text-xl md:text-3xl font-bold text-white glitch-font text-center entry-loader-intense px-4"
                 style={{
                   textShadow: `
                     0 0 10px rgba(255, 255, 255, 0.8),
@@ -61,8 +61,8 @@ export const EntryLoader = () => {
                   filter: 'drop-shadow(0 0 8px rgba(112, 66, 248, 0.8))'
                 }}
               >
-                <span className="intense-glitch" data-text="Entering Blackhole...">
-                  Entering Blackhole...
+                <span className="intense-glitch" data-text="Entering Syahbandi's Portfolio">
+                  Entering Syahbandi's Portfolio
                 </span>
               </div>
             </motion.div>

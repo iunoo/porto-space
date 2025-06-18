@@ -14,83 +14,81 @@ export const Skills = () => {
     <section
       id="skills"
       style={{ transform: "scale(0.9)" }}
-      className="flex flex-col items-center justify-center gap-3 h-full relative py-10 md:py-20 mobile-section-padding mobile-section-spacing"
+      className="flex flex-col items-center justify-center gap-3 h-full relative py-10 md:py-20 mobile-section-padding mobile-section-spacing overflow-hidden"
     >
-      {/* FIXED: Add overflow-hidden to prevent scrollbars */}
-      <div className="w-full overflow-hidden">
-        <SkillText />
+      <SkillText />
 
-        {/* Main Skills - Mobile: 3 columns, Desktop: flex-wrap */}
-        <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center overflow-hidden">
-          {SKILL_DATA.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i}
-            />
-          ))}
-        </div>
-
-        {/* Frontend Skills */}
-        <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center overflow-hidden">
-          {FRONTEND_SKILL.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i}
-            />
-          ))}
-        </div>
-
-        {/* Backend Skills */}
-        <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center overflow-hidden">
-          {BACKEND_SKILL.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i}
-            />
-          ))}
-        </div>
-
-        {/* Fullstack Skills */}
-        <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center overflow-hidden">
-          {FULLSTACK_SKILL.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i}
-            />
-          ))}
-        </div>
-
-        {/* Other Skills */}
-        <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center overflow-hidden">
-          {OTHER_SKILL.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i}
-            />
-          ))}
-        </div>
+      {/* FIXED: Main Skills - Grid Layout yang Rapi */}
+      <div className="skills-grid-container">
+        {SKILL_DATA.map((skill, i) => (
+          <SkillDataProvider
+            key={skill.skill_name}
+            src={skill.image}
+            name={skill.skill_name}
+            width={skill.width}
+            height={skill.height}
+            index={i}
+          />
+        ))}
       </div>
 
+      {/* FIXED: Frontend Skills - Grid Layout yang Rapi */}
+      <div className="skills-grid-container">
+        {FRONTEND_SKILL.map((skill, i) => (
+          <SkillDataProvider
+            key={skill.skill_name}
+            src={skill.image}
+            name={skill.skill_name}
+            width={skill.width}
+            height={skill.height}
+            index={i}
+          />
+        ))}
+      </div>
+
+      {/* FIXED: Backend Skills - Grid Layout yang Rapi */}
+      <div className="skills-grid-container">
+        {BACKEND_SKILL.map((skill, i) => (
+          <SkillDataProvider
+            key={skill.skill_name}
+            src={skill.image}
+            name={skill.skill_name}
+            width={skill.width}
+            height={skill.height}
+            index={i}
+          />
+        ))}
+      </div>
+
+      {/* FIXED: Fullstack Skills - Grid Layout yang Rapi */}
+      <div className="skills-grid-container">
+        {FULLSTACK_SKILL.map((skill, i) => (
+          <SkillDataProvider
+            key={skill.skill_name}
+            src={skill.image}
+            name={skill.skill_name}
+            width={skill.width}
+            height={skill.height}
+            index={i}
+          />
+        ))}
+      </div>
+
+      {/* FIXED: Other Skills - Grid Layout yang Rapi */}
+      <div className="skills-grid-container">
+        {OTHER_SKILL.map((skill, i) => (
+          <SkillDataProvider
+            key={skill.skill_name}
+            src={skill.image}
+            name={skill.skill_name}
+            width={skill.width}
+            height={skill.height}
+            index={i}
+          />
+        ))}
+      </div>
+
+      {/* Background Video */}
       <div className="w-full h-full absolute overflow-hidden">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover overflow-hidden">
           <video
