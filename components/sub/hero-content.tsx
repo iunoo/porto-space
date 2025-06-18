@@ -17,10 +17,10 @@ export const HeroContent = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
-    // Show content after entry loader finishes (2.5s + 0.3s buffer)
+    // Show content after entry loader finishes (3s + 0.5s buffer)
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 2800);
+    }, 3500);
 
     return () => clearTimeout(timer);
   }, []);
