@@ -67,7 +67,7 @@ export const EntryLoader = () => {
               </div>
             </motion.div>
 
-            {/* ENTERING... - DI BAWAH (TIDAK MENGHALANGI BH) */}
+            {/* ENTERING SYAHBANDI'S PORTFOLIO - DI BAWAH (TIDAK MENGHALANGI BH) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -88,8 +88,8 @@ export const EntryLoader = () => {
                   filter: 'drop-shadow(0 0 6px rgba(112, 66, 248, 0.7))'
                 }}
               >
-                <span className="intense-glitch" data-text="Entering...">
-                  Entering...
+                <span className="intense-glitch" data-text="Entering Syahbandi's Portfolio">
+                  Entering Syahbandi's Portfolio
                 </span>
               </div>
             </motion.div>
