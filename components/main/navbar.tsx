@@ -18,7 +18,7 @@ export const Navbar = () => {
       // Custom offsets for different sections - DISESUAIKAN SUPAYA PAS BANGET
       if (elementId === '#about-me') {
         // About me should show the hero section properly
-        offsetTop = element.offsetTop - 100;
+        offsetTop = element.offsetTop - 150;
       } else if (elementId === '#skills') {
         // Skills harus PAS BANGET - welcome box + title + subtitle + SEMUA icons keliatan
         // EDIT NILAI INI UNTUK ADJUST POSISI SKILLS! 👇👇👇
