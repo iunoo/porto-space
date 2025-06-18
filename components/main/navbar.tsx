@@ -22,7 +22,7 @@ export const Navbar = () => {
       } else if (elementId === '#skills') {
         // Skills harus PAS BANGET - welcome box + title + subtitle + SEMUA icons keliatan
         // EDIT NILAI INI UNTUK ADJUST POSISI SKILLS! 👇👇👇
-        offsetTop = element.offsetTop - 320; // <-- EDIT ANGKA INI SESUKA HATI!
+        offsetTop = element.offsetTop - 100; // <-- EDIT ANGKA INI SESUKA HATI!
       } else if (elementId === '#projects') {
         // Projects section
         offsetTop = element.offsetTop - 100;
