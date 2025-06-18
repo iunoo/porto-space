@@ -10,11 +10,11 @@ export const EntryLoader = () => {
     // Add body class to prevent scrolling
     document.body.classList.add('preloader-active');
 
-    // Hide entire loader after 1 second
+    // Hide entire loader after 2.5 seconds (increased from 1s)
     const loaderTimer = setTimeout(() => {
       setIsVisible(false);
       document.body.classList.remove('preloader-active');
-    }, 1000);
+    }, 2500);
 
     return () => {
       clearTimeout(loaderTimer);
@@ -28,7 +28,7 @@ export const EntryLoader = () => {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
           className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden flex items-center justify-center"
         >
           {/* Centered Blackhole */}
@@ -43,23 +43,23 @@ export const EntryLoader = () => {
               <source src="/videos/blackhole.webm" type="video/webm" />
             </video>
 
-            {/* Loading Text with Enhanced Visibility */}
+            {/* Loading Text with Enhanced Visibility - Positioned below blackhole */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              className="absolute bottom-1/3 left-0 right-0 z-10 flex items-center justify-center"
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="absolute bottom-1/4 left-0 right-0 z-10 flex items-center justify-center"
             >
               <div 
-                className="text-2xl md:text-3xl font-medium text-white glitch-font text-center entry-loader"
+                className="text-xl md:text-2xl font-medium text-white glitch-font text-center entry-loader"
                 style={{
-                  textShadow: '0 0 8px rgba(0, 0, 0, 0.9), 0 0 16px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.8)',
+                  textShadow: '0 0 12px rgba(0, 0, 0, 0.9), 0 0 24px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.9)',
                   WebkitTextStroke: '0.5px rgba(0, 0, 0, 0.8)',
-                  filter: 'drop-shadow(0 0 4px rgba(0, 0, 0, 0.9))'
+                  filter: 'drop-shadow(0 0 6px rgba(0, 0, 0, 0.9))'
                 }}
               >
-                <span className="glitch" data-text="Entering Blackhole...">
-                  Entering Blackhole...
+                <span className="glitch" data-text="Entering Syahbandi Portfolio">
+                  Entering Syahbandi Portfolio
                 </span>
               </div>
             </motion.div>

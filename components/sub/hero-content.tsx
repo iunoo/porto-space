@@ -17,19 +17,31 @@ export const HeroContent = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
-    // Show content after entry loader finishes (1s + 0.2s buffer)
+    // Show content after entry loader finishes (2.5s + 0.3s buffer)
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 1200);
+    }, 2800);
 
     return () => clearTimeout(timer);
   }, []);
+
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId.replace('#', ''));
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <motion.div
       initial="hidden"
       animate={showContent ? "visible" : "hidden"}
       className="flex flex-col md:flex-row items-center justify-center px-4 md:px-20 mt-20 md:mt-40 w-full z-[20] mobile-section-padding"
+      id="about-me"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
@@ -89,12 +101,12 @@ export const HeroContent = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex justify-start"
         >
-          <Link
-            href="#projects"
+          <button
+            onClick={() => smoothScrollTo('projects')}
             className="py-3 md:py-2 button-primary text-center text-white cursor-pointer rounded-lg mobile-button"
           >
             Explore more
-          </Link>
+          </button>
         </motion.div>
       </div>
 

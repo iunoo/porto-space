@@ -7,6 +7,44 @@ import { NAV_LINKS, SOCIALS } from "@/constants";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
+  // Smooth scroll function
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId.replace('#', ''));
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Account for navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  // Track active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['about-me', 'skills', 'projects'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(`#${section}`);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -28,8 +66,8 @@ export const Navbar = () => {
       <div className="w-full h-full flex items-center m-auto px-[10px]">
         {/* Logo + Name */}
         <div className="flex items-center flex-1">
-          <Link
-            href="#about-me"
+          <button
+            onClick={() => smoothScrollTo('about-me')}
             className="flex items-center group"
           >
             <Image
@@ -45,22 +83,24 @@ export const Navbar = () => {
                 Syahbandi – AI-Powered Systems Builder
               </span>
             </div>
-          </Link>
+          </button>
         </div>
 
         {/* Web Navbar - Perfectly Centered */}
         <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
           <div className="flex items-center justify-center gap-8 h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] px-[30px] py-[10px] rounded-full text-gray-200">
             {NAV_LINKS.map((link) => (
-              <Link
+              <button
                 key={link.title}
-                href={link.link ?? ''}
-                className="cursor-pointer transition relative nav-link-glitch"
+                onClick={() => smoothScrollTo(link.link)}
+                className={`cursor-pointer transition relative nav-link-glitch ${
+                  activeSection === link.link ? 'text-purple-400' : ''
+                }`}
                 title={`Navigate to ${link.title}`}
                 data-text={link.title}
               >
                 {link.title}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
@@ -96,14 +136,15 @@ export const Navbar = () => {
           {/* Links */}
           <div className="flex flex-col items-center w-full">
             {NAV_LINKS.map((link) => (
-              <Link
+              <button
                 key={link.title}
-                href={link.link ?? ''}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center w-full mobile-nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => smoothScrollTo(link.link)}
+                className={`cursor-pointer hover:text-[rgb(112,66,248)] transition text-center w-full mobile-nav-link ${
+                  activeSection === link.link ? 'text-purple-400' : ''
+                }`}
               >
                 {link.title}
-              </Link>
+              </button>
             ))}
           </div>
 

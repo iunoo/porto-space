@@ -13,12 +13,12 @@ export const StarBackground = (props: PointsProps) => {
   );
 
   useEffect(() => {
-    // Fade in stars after entry loader finishes
+    // Fade in stars after entry loader finishes (2.5s + 0.5s buffer)
     const timer = setTimeout(() => {
       if (ref.current) {
         ref.current.material.opacity = 1;
       }
-    }, 1200);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -56,17 +56,17 @@ export const StarsCanvas = () => {
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    // Start fade-in after entry loader finishes
+    // Start fade-in after entry loader finishes (2.5s + 0.5s buffer)
     const timer = setTimeout(() => {
       setFadeIn(true);
-    }, 1200);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div 
-      className={`w-full h-auto fixed inset-0 z-[-1] transition-opacity duration-700 ${
+      className={`w-full h-auto fixed inset-0 z-[-1] transition-opacity duration-1000 ${
         fadeIn ? 'opacity-100' : 'opacity-0'
       }`}
     >

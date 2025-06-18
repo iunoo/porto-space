@@ -1,5 +1,6 @@
 import { SkillDataProvider } from "@/components/sub/skill-data-provider";
 import { SkillText } from "@/components/sub/skill-text";
+import { SkillProficiencyBars } from "@/components/sub/skill-proficiency-bars";
 
 import {
   BACKEND_SKILL,
@@ -17,6 +18,9 @@ export const Skills = () => {
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-10 md:py-20 mobile-section-padding mobile-section-spacing"
     >
       <SkillText />
+
+      {/* Skill Proficiency Bars */}
+      <SkillProficiencyBars />
 
       {/* Main Skills - Mobile: 3 columns, Desktop: flex-wrap */}
       <div className="skills-mobile-grid md:flex md:flex-row md:justify-around md:flex-wrap md:mt-4 md:gap-5 md:items-center">
