@@ -5,18 +5,25 @@ import { useEffect, useState } from "react";
 
 export const EntryLoader = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const [startPullUp, setStartPullUp] = useState(false);
 
   useEffect(() => {
     // Add body class to prevent scrolling
     document.body.classList.add('preloader-active');
 
-    // Hide entire loader after 1 second
+    // Start pull up animation after 2 seconds
+    const pullUpTimer = setTimeout(() => {
+      setStartPullUp(true);
+    }, 2000);
+
+    // Hide entire loader after pull up animation completes (2s + 0.5s animation)
     const loaderTimer = setTimeout(() => {
       setIsVisible(false);
       document.body.classList.remove('preloader-active');
-    }, 1000);
+    }, 2500);
 
     return () => {
+      clearTimeout(pullUpTimer);
       clearTimeout(loaderTimer);
       document.body.classList.remove('preloader-active');
     };
@@ -27,8 +34,14 @@ export const EntryLoader = () => {
       {isVisible && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          animate={{ 
+            opacity: 1,
+            y: startPullUp ? -window.innerHeight : 0
+          }}
+          transition={{ 
+            y: { duration: 0.5, ease: "easeInOut" },
+            opacity: { duration: 0 }
+          }}
           className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden flex items-center justify-center"
         >
           {/* Centered Blackhole */}
