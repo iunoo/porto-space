@@ -10,7 +10,7 @@ import {
 } from "@/constants";
 
 export const Skills = () => {
-  // PERFECT: 4 BARIS + 1 baris terakhir dengan 1 icon
+  // PERFECT: MAKSIMAL 4 BARIS - TIDAK BOLEH LEBIH!
   
   // Row 1: 11 icons (baris paling atas - paling panjang)
   const row1Skills = [
@@ -33,11 +33,11 @@ export const Skills = () => {
   // Row 3: 8 icons (BACKEND_SKILL)  
   const row3Skills = BACKEND_SKILL;
 
-  // Row 4: 4 icons (FULLSTACK_SKILL)
-  const row4Skills = FULLSTACK_SKILL;
-
-  // Row 5: 1 icon (Go - puncak pyramid)
-  const row5Skills = OTHER_SKILL;
+  // Row 4: 5 icons (FULLSTACK_SKILL + Go) - BARIS TERAKHIR
+  const row4Skills = [
+    ...FULLSTACK_SKILL, // 4 icons: React Native, Tauri, Docker, Figma
+    ...OTHER_SKILL,     // 1 icon: Go
+  ];
 
   return (
     <section
@@ -47,7 +47,7 @@ export const Skills = () => {
     >
       <SkillText />
 
-      {/* PERFECT: 4 Baris + 1 Icon Terakhir */}
+      {/* PERFECT: MAKSIMAL 4 BARIS SAJA! */}
       <div className="perfect-pyramid-container">
         
         {/* Row 1: 11 icons (paling atas - paling panjang) */}
@@ -92,7 +92,7 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 4: 4 icons */}
+        {/* Row 4: 5 icons (BARIS TERAKHIR - TIDAK ADA LAGI SETELAH INI!) */}
         <div className="perfect-row-4">
           {row4Skills.map((skill, i) => (
             <SkillDataProvider
@@ -102,20 +102,6 @@ export const Skills = () => {
               width={skill.width}
               height={skill.height}
               index={i + row1Skills.length + row2Skills.length + row3Skills.length}
-            />
-          ))}
-        </div>
-
-        {/* Row 5: 1 icon (Go - puncak pyramid) */}
-        <div className="perfect-row-5">
-          {row5Skills.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i + row1Skills.length + row2Skills.length + row3Skills.length + row4Skills.length}
             />
           ))}
         </div>
