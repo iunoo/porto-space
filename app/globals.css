@@ -929,40 +929,95 @@ body, html {
   overflow-x: hidden;
 }
 
-/* PERFECT: Skills Grid Layout - Rapi dan Teratur Seperti Gambar 2 */
-.skills-grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+/* PERFECT: Pyramid Inverted Skills Layout - Persis Seperti Gambar */
+.skills-pyramid-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  max-width: 1200px;
+  gap: 2rem;
+  max-width: 1400px;
   margin: 2rem auto;
   padding: 0 2rem;
 }
 
-/* Mobile Skills Layout - 4 kolom rapi */
+/* Row 1: 13 icons (paling atas - paling panjang) */
+.skills-row-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+/* Row 2: 10 icons */
+.skills-row-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 90%;
+}
+
+/* Row 3: 8 icons */
+.skills-row-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 80%;
+}
+
+/* Row 4: 4 icons */
+.skills-row-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 60%;
+}
+
+/* Row 5: 1 icon (paling bawah - puncak pyramid) */
+.skills-row-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%;
+}
+
+/* Mobile Pyramid Layout - Tetap pyramid tapi lebih compact */
 @media (max-width: 767px) {
-  .skills-grid-container {
-    grid-template-columns: repeat(4, 1fr);
+  .skills-pyramid-container {
     gap: 1.5rem;
     margin: 1.5rem auto;
     padding: 0 1rem;
+  }
+
+  .skills-row-1 {
+    gap: 1rem;
     max-width: 100%;
   }
-}
 
-/* Desktop Skills Layout - Flex wrap dengan spacing konsisten */
-@media (min-width: 768px) {
-  .skills-grid-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    margin: 2.5rem auto;
-    padding: 0 2rem;
+  .skills-row-2 {
+    gap: 1rem;
+    max-width: 95%;
+  }
+
+  .skills-row-3 {
+    gap: 1rem;
+    max-width: 85%;
+  }
+
+  .skills-row-4 {
+    gap: 1rem;
+    max-width: 70%;
+  }
+
+  .skills-row-5 {
+    max-width: 50%;
   }
 }
 
