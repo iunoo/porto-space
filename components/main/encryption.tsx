@@ -7,7 +7,7 @@ import { slideInFromTop } from "@/lib/motion";
 
 export const Encryption = () => {
   return (
-    <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full -z-20 mobile-section-padding mobile-section-spacing">
+    <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full -z-20 mobile-section-padding mobile-section-spacing overflow-hidden">
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
@@ -52,7 +52,7 @@ export const Encryption = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-start justify-center absolute">
+      <div className="w-full flex items-start justify-center absolute overflow-hidden">
         <video
           loop
           muted

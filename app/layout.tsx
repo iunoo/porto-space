@@ -22,7 +22,7 @@ export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
         className={cn(
           "bg-[#030014] overflow-y-scroll overflow-x-hidden",
@@ -32,7 +32,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <EntryLoader />
         <StarsCanvas />
         <Navbar />
-        {children}
+        <div className="overflow-x-hidden">
+          {children}
+        </div>
         <Footer />
         <EasterEggs />
       </body>

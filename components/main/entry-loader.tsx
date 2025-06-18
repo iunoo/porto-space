@@ -38,15 +38,15 @@ export const EntryLoader = () => {
           transition={{ duration: 0.5 }}
           className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden flex items-center justify-center"
         >
-          {/* Blackhole with transition animation - FIXED: Stop at portfolio position */}
+          {/* Blackhole with FIXED transition - ONLY move up, NO zoom */}
           <motion.div
             className="relative flex items-center justify-center w-full h-full"
             animate={startTransition ? {
               y: "calc(-50vh + 170px)", // Move to exact portfolio blackhole position
-              scale: 0.8,
+              // NO SCALE - removed scale property completely
             } : {
               y: 0,
-              scale: 1,
+              // NO SCALE - removed scale property completely
             }}
             transition={{
               duration: 0.8,
