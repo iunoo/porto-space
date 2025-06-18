@@ -34,7 +34,7 @@ export const EntryLoader = () => {
       {isVisible && (
         <motion.div
           initial={{ opacity: 1 }}
-          // exit={{ opacity: 0 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
           className="fixed inset-0 z-[9999] bg-[#030014] overflow-hidden flex items-center justify-center"
         >
