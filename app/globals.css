@@ -929,86 +929,86 @@ body, html {
   overflow-x: hidden;
 }
 
-/* PERFECT: Pyramid Inverted Skills Layout - MAKSIMAL 4 BARIS! */
+/* FINAL PERFECT: Pyramid Inverted Skills Layout - MAKSIMAL 4 BARIS SAJA! */
 .perfect-pyramid-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 2rem;
 }
 
-/* Row 1: 11 icons (paling atas - paling panjang) */
+/* Row 1: 9 icons (paling atas - paling panjang) */
 .perfect-row-1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
+  gap: 2rem;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
 }
 
-/* Row 2: 10 icons */
+/* Row 2: 8 icons */
 .perfect-row-2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
+  gap: 2rem;
   flex-wrap: wrap;
   width: 90%;
-  max-width: 900px;
+  max-width: 800px;
 }
 
-/* Row 3: 8 icons */
+/* Row 3: 6 icons */
 .perfect-row-3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  width: 80%;
-  max-width: 720px;
+  width: 75%;
+  max-width: 600px;
 }
 
-/* Row 4: 5 icons (BARIS TERAKHIR - TIDAK ADA LAGI!) */
+/* Row 4: 3 icons (BARIS TERAKHIR - TIDAK ADA LAGI!) */
 .perfect-row-4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  width: 60%;
-  max-width: 450px;
+  width: 50%;
+  max-width: 300px;
 }
 
 /* Mobile Pyramid Layout - Tetap pyramid tapi lebih compact */
 @media (max-width: 767px) {
   .perfect-pyramid-container {
-    gap: 1rem;
+    gap: 1.5rem;
     margin: 1.5rem auto;
     padding: 0 1rem;
   }
 
   .perfect-row-1 {
-    gap: 0.8rem;
+    gap: 1rem;
     max-width: 100%;
   }
 
   .perfect-row-2 {
-    gap: 0.8rem;
+    gap: 1rem;
     max-width: 95%;
   }
 
   .perfect-row-3 {
-    gap: 0.8rem;
+    gap: 1rem;
     max-width: 85%;
   }
 
   .perfect-row-4 {
-    gap: 0.8rem;
+    gap: 1rem;
     max-width: 70%;
   }
 }

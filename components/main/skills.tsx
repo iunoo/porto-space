@@ -10,9 +10,9 @@ import {
 } from "@/constants";
 
 export const Skills = () => {
-  // PERFECT: MAKSIMAL 4 BARIS - TIDAK BOLEH LEBIH!
+  // FINAL: MAKSIMAL 4 BARIS - TIDAK BOLEH ADA BARIS KE-5!
   
-  // Row 1: 11 icons (baris paling atas - paling panjang)
+  // Row 1: 9 icons (baris paling atas)
   const row1Skills = [
     SKILL_DATA[0], // HTML
     SKILL_DATA[1], // CSS  
@@ -23,20 +23,35 @@ export const Skills = () => {
     SKILL_DATA[6], // React Query
     SKILL_DATA[7], // TypeScript
     SKILL_DATA[8], // Next.js
-    SKILL_DATA[9], // Framer
-    SKILL_DATA[11], // Node.js
   ];
 
-  // Row 2: 10 icons (FRONTEND_SKILL)
-  const row2Skills = FRONTEND_SKILL;
+  // Row 2: 8 icons
+  const row2Skills = [
+    SKILL_DATA[9],  // Framer
+    SKILL_DATA[11], // Node.js
+    FRONTEND_SKILL[4], // Material UI
+    BACKEND_SKILL[0], // Node.js (duplicate, but different context)
+    BACKEND_SKILL[1], // Express.js
+    BACKEND_SKILL[2], // MongoDB
+    BACKEND_SKILL[3], // Firebase
+    BACKEND_SKILL[4], // PostgreSQL
+  ];
 
-  // Row 3: 8 icons (BACKEND_SKILL)  
-  const row3Skills = BACKEND_SKILL;
+  // Row 3: 6 icons
+  const row3Skills = [
+    BACKEND_SKILL[5], // MySQL
+    BACKEND_SKILL[6], // Prisma
+    BACKEND_SKILL[7], // GraphQL
+    FULLSTACK_SKILL[0], // React Native
+    FULLSTACK_SKILL[1], // Tauri
+    FULLSTACK_SKILL[2], // Docker
+  ];
 
-  // Row 4: 5 icons (FULLSTACK_SKILL + Go) - BARIS TERAKHIR
+  // Row 4: 3 icons (BARIS TERAKHIR - TIDAK ADA LAGI!)
   const row4Skills = [
-    ...FULLSTACK_SKILL, // 4 icons: React Native, Tauri, Docker, Figma
-    ...OTHER_SKILL,     // 1 icon: Go
+    FULLSTACK_SKILL[3], // Figma
+    OTHER_SKILL[0],     // Go
+    SKILL_DATA[10],     // Stripe
   ];
 
   return (
@@ -47,10 +62,10 @@ export const Skills = () => {
     >
       <SkillText />
 
-      {/* PERFECT: MAKSIMAL 4 BARIS SAJA! */}
+      {/* FINAL: MAKSIMAL 4 BARIS SAJA! */}
       <div className="perfect-pyramid-container">
         
-        {/* Row 1: 11 icons (paling atas - paling panjang) */}
+        {/* Row 1: 9 icons (paling atas - paling panjang) */}
         <div className="perfect-row-1">
           {row1Skills.map((skill, i) => (
             <SkillDataProvider
@@ -64,11 +79,11 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 2: 10 icons */}
+        {/* Row 2: 8 icons */}
         <div className="perfect-row-2">
           {row2Skills.map((skill, i) => (
             <SkillDataProvider
-              key={skill.skill_name}
+              key={`${skill.skill_name}-${i}`}
               src={skill.image}
               name={skill.skill_name}
               width={skill.width}
@@ -78,11 +93,11 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 3: 8 icons */}
+        {/* Row 3: 6 icons */}
         <div className="perfect-row-3">
           {row3Skills.map((skill, i) => (
             <SkillDataProvider
-              key={skill.skill_name}
+              key={`${skill.skill_name}-${i}`}
               src={skill.image}
               name={skill.skill_name}
               width={skill.width}
@@ -92,11 +107,11 @@ export const Skills = () => {
           ))}
         </div>
 
-        {/* Row 4: 5 icons (BARIS TERAKHIR - TIDAK ADA LAGI SETELAH INI!) */}
+        {/* Row 4: 3 icons (BARIS TERAKHIR - TIDAK ADA LAGI SETELAH INI!) */}
         <div className="perfect-row-4">
           {row4Skills.map((skill, i) => (
             <SkillDataProvider
-              key={skill.skill_name}
+              key={`${skill.skill_name}-${i}`}
               src={skill.image}
               name={skill.skill_name}
               width={skill.width}
