@@ -10,21 +10,33 @@ import {
 } from "@/constants";
 
 export const Skills = () => {
-  // Distribusi skills dalam bentuk pyramid terbalik (seperti gambar)
-  // Row 1: 13 icons (SKILL_DATA)
-  const row1Skills = SKILL_DATA; // 13 icons
+  // PERFECT: Distribusi skills persis seperti gambar
+  // Row 1: 11 icons (baris paling atas - paling panjang)
+  const row1Skills = [
+    SKILL_DATA[0], // HTML
+    SKILL_DATA[1], // CSS  
+    SKILL_DATA[2], // JavaScript
+    SKILL_DATA[3], // Tailwind
+    SKILL_DATA[4], // React
+    SKILL_DATA[5], // Redux
+    SKILL_DATA[6], // React Query
+    SKILL_DATA[7], // TypeScript
+    SKILL_DATA[8], // Next.js
+    SKILL_DATA[9], // Framer
+    SKILL_DATA[11], // Node.js
+  ];
 
-  // Row 2: 10 icons (FRONTEND_SKILL)  
-  const row2Skills = FRONTEND_SKILL; // 10 icons
+  // Row 2: 10 icons
+  const row2Skills = FRONTEND_SKILL;
 
-  // Row 3: 8 icons (BACKEND_SKILL)
-  const row3Skills = BACKEND_SKILL; // 8 icons
+  // Row 3: 8 icons  
+  const row3Skills = BACKEND_SKILL;
 
-  // Row 4: 4 icons (FULLSTACK_SKILL)
-  const row4Skills = FULLSTACK_SKILL; // 4 icons
+  // Row 4: 4 icons
+  const row4Skills = FULLSTACK_SKILL;
 
-  // Row 5: 1 icon (OTHER_SKILL)
-  const row5Skills = OTHER_SKILL; // 1 icon
+  // Row 5: 1 icon (puncak pyramid)
+  const row5Skills = OTHER_SKILL;
 
   return (
     <section
@@ -35,10 +47,10 @@ export const Skills = () => {
       <SkillText />
 
       {/* PERFECT: Pyramid Inverted Layout - Persis Seperti Gambar */}
-      <div className="skills-pyramid-container">
+      <div className="perfect-pyramid-container">
         
-        {/* Row 1: 13 icons (paling atas - paling panjang) */}
-        <div className="skills-row-1">
+        {/* Row 1: 11 icons (paling atas - paling panjang) */}
+        <div className="perfect-row-1">
           {row1Skills.map((skill, i) => (
             <SkillDataProvider
               key={skill.skill_name}
@@ -52,7 +64,7 @@ export const Skills = () => {
         </div>
 
         {/* Row 2: 10 icons */}
-        <div className="skills-row-2">
+        <div className="perfect-row-2">
           {row2Skills.map((skill, i) => (
             <SkillDataProvider
               key={skill.skill_name}
@@ -66,7 +78,7 @@ export const Skills = () => {
         </div>
 
         {/* Row 3: 8 icons */}
-        <div className="skills-row-3">
+        <div className="perfect-row-3">
           {row3Skills.map((skill, i) => (
             <SkillDataProvider
               key={skill.skill_name}
@@ -80,7 +92,7 @@ export const Skills = () => {
         </div>
 
         {/* Row 4: 4 icons */}
-        <div className="skills-row-4">
+        <div className="perfect-row-4">
           {row4Skills.map((skill, i) => (
             <SkillDataProvider
               key={skill.skill_name}
@@ -94,7 +106,7 @@ export const Skills = () => {
         </div>
 
         {/* Row 5: 1 icon (paling bawah - puncak pyramid) */}
-        <div className="skills-row-5">
+        <div className="perfect-row-5">
           {row5Skills.map((skill, i) => (
             <SkillDataProvider
               key={skill.skill_name}
