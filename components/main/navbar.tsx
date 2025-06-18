@@ -20,8 +20,8 @@ export const Navbar = () => {
         // About me should show the hero section properly
         offsetTop = element.offsetTop - 120; // Reduced offset to show more of hero
       } else if (elementId === '#skills') {
-        // Skills should show the welcome box and title properly
-        offsetTop = element.offsetTop - 200; // Much more offset to show welcome box
+        // Skills should show the welcome box and title properly but not cut bottom
+        offsetTop = element.offsetTop - 150; // Reduced from 200 to 150
       } else {
         // Default offset for other sections
         offsetTop = element.offsetTop - 80;
@@ -35,11 +35,17 @@ export const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Track active section
+  // Track active section - FIXED: Better logic
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['about-me', 'skills', 'projects'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 200; // Increased threshold
+
+      // Default to about-me if at top
+      if (window.scrollY < 100) {
+        setActiveSection('#about-me');
+        return;
+      }
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -55,6 +61,9 @@ export const Navbar = () => {
       }
     };
 
+    // Set initial state
+    setActiveSection('#about-me');
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
