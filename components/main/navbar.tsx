@@ -21,8 +21,8 @@ export const Navbar = () => {
         offsetTop = element.offsetTop - 100;
       } else if (elementId === '#skills') {
         // Skills harus PAS BANGET - welcome box + title + subtitle + SEMUA icons keliatan
-        // COBA NILAI YANG LEBIH BESAR LAGI supaya tidak ada yang kepotong
-        offsetTop = element.offsetTop - 320; // DIPERBESAR LAGI dari 250 ke 320
+        // EDIT NILAI INI UNTUK ADJUST POSISI SKILLS! 👇👇👇
+        offsetTop = element.offsetTop - 320; // <-- EDIT ANGKA INI SESUKA HATI!
       } else if (elementId === '#projects') {
         // Projects section
         offsetTop = element.offsetTop - 100;
