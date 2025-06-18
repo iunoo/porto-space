@@ -2,6 +2,8 @@
 
 A modern, interactive portfolio website built with Next.js 14, featuring stunning 3D animations, glitch effects, and a space theme. This portfolio showcases AI-powered systems and modern web development skills.
 
+> **Note**: This project is based on the original [Space Portfolio](https://github.com/sanidhyy/space-portfolio) by [Sanidhya Kumar Verma](https://github.com/sanidhyy), modified and customized for personal use.
+
 ## ✨ Features
 
 - **Modern Tech Stack**: Next.js 14, TypeScript, Tailwind CSS
@@ -163,8 +165,13 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## 🙏 Credits & Acknowledgments
 
+### Original Author
+- **[Sanidhya Kumar Verma](https://github.com/sanidhyy)** - Original Space Portfolio template
+- **Repository**: [space-portfolio](https://github.com/sanidhyy/space-portfolio)
+
+### Technologies Used
 - [Next.js](https://nextjs.org/) - React framework
 - [Three.js](https://threejs.org/) - 3D graphics library
 - [Framer Motion](https://www.framer.com/motion/) - Animation library
@@ -176,8 +183,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or need help with setup, feel free to:
 
 - Open an issue on GitHub
-- Contact me at [your-email@domain.com]
-- Visit [your-website.com]
+- Contact me at [contact@iuno.in]
+- Visit [iuno.in]
 
 ---
 
