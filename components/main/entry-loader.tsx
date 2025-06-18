@@ -40,12 +40,12 @@ export const EntryLoader = () => {
               <source src="/videos/blackhole.webm" type="video/webm" />
             </video>
 
-            {/* GET READY - DI ATAS */}
+            {/* GET READY - JAUH DI ATAS */}
             <motion.div
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="absolute top-1/4 left-0 right-0 z-10 flex items-center justify-center"
+              className="absolute top-[15%] left-0 right-0 z-10 flex items-center justify-center"
             >
               <div 
                 className="text-2xl md:text-4xl font-bold text-white glitch-font text-center entry-loader-intense px-4"
@@ -67,12 +67,12 @@ export const EntryLoader = () => {
               </div>
             </motion.div>
 
-            {/* ENTERING SYAHBANDI'S PORTFOLIO - DI BAWAH (TIDAK MENGHALANGI BH) */}
+            {/* ENTERING SYAHBANDI'S PORTFOLIO - JAUH DI BAWAH */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute bottom-1/4 left-0 right-0 z-10 flex items-center justify-center"
+              className="absolute bottom-[15%] left-0 right-0 z-10 flex items-center justify-center"
             >
               <div 
                 className="text-lg md:text-2xl font-medium text-white glitch-font text-center entry-loader-intense px-4"
