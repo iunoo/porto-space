@@ -46,6 +46,12 @@ export const SkillDataProvider = ({
         height={height} 
         alt={name}
         className="w-auto h-auto max-w-[60px] max-h-[60px] md:max-w-none md:max-h-none"
+        onError={(e) => {
+          console.error(`Failed to load skill icon: /skills/${src}`);
+          // Fallback to a placeholder or hide the image
+          e.currentTarget.style.display = 'none';
+        }}
+        priority={index < 6} // Prioritize first 6 images
       />
     </motion.div>
   );
