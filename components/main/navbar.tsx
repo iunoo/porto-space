@@ -9,11 +9,24 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
-  // Smooth scroll function
+  // Smooth scroll function with custom offsets
   const smoothScrollTo = (elementId: string) => {
     const element = document.getElementById(elementId.replace('#', ''));
     if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for navbar height
+      let offsetTop;
+      
+      // Custom offsets for different sections
+      if (elementId === '#about-me') {
+        // About me should show the hero section properly
+        offsetTop = element.offsetTop - 120; // Reduced offset to show more of hero
+      } else if (elementId === '#skills') {
+        // Skills should show the title and description properly
+        offsetTop = element.offsetTop - 150; // More offset to show title area
+      } else {
+        // Default offset for other sections
+        offsetTop = element.offsetTop - 80;
+      }
+      
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
